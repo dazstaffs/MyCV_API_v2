@@ -1,0 +1,21 @@
+{
+  "name": "mycv_apiv2",
+  "version": "1.0.0",
+  "description": "My CV api built from Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "author": "Darren Stafford",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
