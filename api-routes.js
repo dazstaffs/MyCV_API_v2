@@ -21,6 +21,11 @@ router.route('/contacts/:contact_id')
 //Language Actions
 var languageController = require('./controllers/languageController');
 router.route('/languages')
-    .get(languageController.index)
+    .get(languageController.index);
+
+
+var authContrller = require('./controllers/authController');
+router.route('/authenticate')
+    .post(authContrller.auth);
 
 module.exports = router;

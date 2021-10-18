@@ -1,5 +1,6 @@
 let express = require('express');
 let mongoose = require('mongoose');
+
 let app = express();
 let apiRoutes = require("./api-routes");
 const cors = require('cors');
@@ -23,6 +24,10 @@ var port = process.env.PORT || 8080;
 const options = {
     origin: 'http://localhost:4200',
     }
+
+app.use(function (req, res, next) {
+    res.set('Cache-control', 'public, max-age=300')
+});
 app.use(cors(options))
 app.use('/api', apiRoutes);
 app.listen(port, function () {
