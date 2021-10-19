@@ -8,7 +8,9 @@ var userSchema = mongoose.Schema({
     County: String,
     PostCode: String,
     HomeTelephone: String,
-    Mobile: String
+    Mobile: String,
+    EmailAddress: String,
+    Password: String
 });
 
 var User = module.exports = mongoose.model('users', userSchema);

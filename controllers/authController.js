@@ -1,27 +1,26 @@
 let jwt = require('jsonwebtoken');
-let fs = require("fs");
-UserCredential = require('../models/userCredentialModel');
+User = require('../models/userModel');
 var bcrypt = require("bcryptjs");
 const config = require("../config/auth.config");
 
 auth = function (req, res) {
     const email = req.body.email, password = req.body.password;
 
-    UserCredential.findOne({ EmailAddress : email })
-        .exec((err, userCredential) => {
+    User.findOne({ EmailAddress : email })
+        .exec((err, user) => {
             if (err) {
                 return res.status(500).send({ message: err });
             }
 
-            if (!userCredential) {
+            if (!user) {
                 return res.status(404).send({ message: "User Not found." });
             }
 
             console.log("Becrypt")
-            console.log(userCredential)
+            console.log(user)
             var passwordIsValid = bcrypt.compareSync(
                 password,
-                userCredential.Password
+                user.Password
             );
 
             if (!passwordIsValid) {
@@ -31,7 +30,7 @@ auth = function (req, res) {
                 });
             }
 
-            var token = jwt.sign({ id: userCredential.EmailAddress }, config.secret, {
+            var token = jwt.sign({ id: user.EmailAddress }, config.secret, {
                 expiresIn: 86400 // 24 hours
             });
 

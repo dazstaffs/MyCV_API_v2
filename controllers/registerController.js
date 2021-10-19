@@ -25,7 +25,9 @@ register = (req, res) => {
         County: req.body.county,
         PostCode: req.body.postCode,
         HomeTelephone: req.body.homeTelephone,
-        Mobile: req.body.mobile
+        Mobile: req.body.mobile,
+        EmailAddress: req.body.emailAddress,
+        Password: bcrypt.hashSync(req.body.password, 8)
     });
 
     user.save((err, user) => {
@@ -33,20 +35,7 @@ register = (req, res) => {
            res.status(500).send({ message: err}); 
         }
         else{
-            const userCredential = new UserCredential({
-                EmailAddress: req.body.emailAddress,
-                Password: bcrypt.hashSync(req.body.password, 8),
-                UserID: user._id
-            });
-
-            userCredential.save((err, userCredential) => {
-                if (err) {
-                    res.status(500).send({ message: err}); 
-                }
-                else{
-                    res.status(200).send({ message: "User Created"});
-                }
-            });
+            res.status(200).send({ message: "User Created"});
         }
     });
 }
