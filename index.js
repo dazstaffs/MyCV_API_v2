@@ -25,9 +25,6 @@ const options = {
     origin: 'http://localhost:4200',
     }
 
-app.use(function (req, res, next) {
-    res.set('Cache-control', 'public, max-age=300')
-});
 app.use(cors(options))
 app.use('/api', apiRoutes);
 app.listen(port, function () {

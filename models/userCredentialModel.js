@@ -7,16 +7,16 @@ let userCredentialSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    emailAddress: {
+    EmailAddress: {
         type: String
     },
-    password: {
+    Password: {
         type: String
     },
-    lastLogin: {
+    LastLogin: {
         type: Date
     },
-    userID: {
+    UserID: {
         type: String
     }
 });
