@@ -16,8 +16,6 @@ auth = function (req, res) {
                 return res.status(404).send({ message: "User Not found." });
             }
 
-            console.log("Becrypt")
-            console.log(user)
             var passwordIsValid = bcrypt.compareSync(
                 password,
                 user.Password
@@ -31,13 +29,11 @@ auth = function (req, res) {
             }
 
             var token = jwt.sign({ id: user.EmailAddress }, config.secret, {
-                expiresIn: 86400 // 24 hours
+                expiresIn: 86400 //24 hours
             });
 
-            console.log("200")
             res.status(200).send({
-                email: 'test',
-                //roles: authorities//,
+                id: user._id,
                 accessToken: token
             });
         })
