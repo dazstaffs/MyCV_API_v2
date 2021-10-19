@@ -4,7 +4,7 @@ Language = require('../models/languageModel');
 
 // Handle index actions
 exports.index = function (req, res) {
-    Language.get(function (err, languages) {
+    Language.find({ IsSupported : true }, function (err, languages) {
         if (err) {
             res.json({
                 status: "error",

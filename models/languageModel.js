@@ -2,8 +2,16 @@ var mongoose = require('mongoose');
 const Schema = require('mongoose').Schema;
 // Setup schema
 var languageSchema = mongoose.Schema({
-    name: {
+    LanguageName: {
         type: String,
+        required: true
+    },
+    LanguageCode: {
+        type: String,
+        required: true
+    },
+    IsSupported: {
+        type: Boolean,
         required: true
     },
     _id: {
