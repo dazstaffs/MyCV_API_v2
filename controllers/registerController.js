@@ -2,9 +2,9 @@ const UserCredential = require('../models/userModel');
 const User =  require('../models/userModel');
 var bcrypt = require("bcryptjs");
 
-checkDuplicateUsername = (req, res, next) => {
+checkDuplicateUsername = (req, res) => {
     UserCredential.findOne({
-        EmailAddress: req.body.email
+        EmailAddress: req.body.emailAddress
     })
     .exec((err,userCredential) => {
         if (err) {
@@ -13,7 +13,9 @@ checkDuplicateUsername = (req, res, next) => {
         if (userCredential) {
             res.status(400).send({ message: "Username already in use!"})
         }
-        next;
+        else{
+            res.status(200).send({ message: "Username free for use"});
+        }
     });
 }
 

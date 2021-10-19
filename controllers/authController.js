@@ -28,12 +28,11 @@ auth = function (req, res) {
                 });
             }
 
-            var token = jwt.sign({ id: user.EmailAddress }, config.secret, {
+            var token = jwt.sign({ id: user._id }, config.secret, {
                 expiresIn: 86400 //24 hours
             });
 
             res.status(200).send({
-                id: user._id,
                 accessToken: token
             });
         })
@@ -50,7 +49,7 @@ verifyToken = (req, res, next) =>{
         if (err) {
             return res.status(401).send({ message: "Unauthorized"});
         }
-        req.EmailAddress = decoded.EmailAddress;
+        req.id = decoded.id;
         next();
     })
 }
