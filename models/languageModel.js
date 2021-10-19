@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
+const Schema = require('mongoose').Schema;
 // Setup schema
 var languageSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    id: {
-        type: Number
+    _id: {
+        type: [Schema.Types.ObjectId]
     }
 });
 // Export Contact model

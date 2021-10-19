@@ -28,4 +28,8 @@ var authContrller = require('./controllers/authController');
 router.route('/authenticate')
     .post(authContrller.auth);
 
+var registerController = require('./controllers/registerController');
+router.route('/register')
+    .post(registerController.register);
+
 module.exports = router;

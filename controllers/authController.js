@@ -1,27 +1,27 @@
 let jwt = require('jsonwebtoken');
 let fs = require("fs");
-User = require('../models/userCredentialModel');
+UserCredential = require('../models/userCredentialModel');
 var bcrypt = require("bcryptjs");
+const config = require("../config/auth.config");
 
-exports.auth = function (req, res) {
-    //const RSA_PRIVATE_KEY = fs.readFileSync(__dirname + '/resources/MyCVPrivateKey.ppk')
+auth = function (req, res) {
     const email = req.body.email, password = req.body.password;
 
-    User.findOne({ EmailAddress : email })
-        .exec((err, user) => {
+    UserCredential.findOne({ EmailAddress : email })
+        .exec((err, userCredential) => {
             if (err) {
                 return res.status(500).send({ message: err });
             }
 
-            if (!user) {
+            if (!userCredential) {
                 return res.status(404).send({ message: "User Not found." });
             }
 
             console.log("Becrypt")
-            console.log(password + ' ' + user.Password)
+            console.log(userCredential)
             var passwordIsValid = bcrypt.compareSync(
                 password,
-                user.Password
+                userCredential.Password
             );
 
             if (!passwordIsValid) {
@@ -31,16 +31,37 @@ exports.auth = function (req, res) {
                 });
             }
 
-            //   var token = jwt.sign({ id: user.id }, config.secret, {
-            //     expiresIn: 86400 // 24 hours
-            //   });
+            var token = jwt.sign({ id: userCredential.EmailAddress }, config.secret, {
+                expiresIn: 86400 // 24 hours
+            });
 
             console.log("200")
             res.status(200).send({
-                email: 'test'//,
+                email: 'test',
                 //roles: authorities//,
-                //accessToken: token
+                accessToken: token
             });
         })
-
 };
+
+verifyToken = (req, res, next) =>{
+    let token = req.headers["x-access-token"];
+
+    if (!token) {
+        return res.status(403).send({ message: "No token provided"});
+    }
+
+    jwt.verify(token, config.secret, (err, decoded) =>{
+        if (err) {
+            return res.status(401).send({ message: "Unauthorized"});
+        }
+        req.EmailAddress = decoded.EmailAddress;
+        next();
+    })
+}
+
+const authJwt = {
+    auth, verifyToken
+};
+
+module.exports = authJwt;
