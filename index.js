@@ -2,7 +2,6 @@ let express = require('express');
 let mongoose = require('mongoose');
 
 let app = express();
-let apiRoutes = require("./routes/api-routes");
 const cors = require('cors');
 
 app.use(express.urlencoded({
@@ -26,7 +25,10 @@ const options = {
     }
 
 app.use(cors(options))
-app.use('/api', apiRoutes);
+
+//routes
+require('./routes/restricted-access-routes')(app);
+require('./routes/all-access-routes')(app);
 
 app.listen(port, function () {
     console.log("My CV API is listening on port " + port);
