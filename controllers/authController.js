@@ -40,7 +40,6 @@ auth = function (req, res) {
 
 verifyToken = (req, res, next) =>{
     let token = req.headers["x-access-token"];
-
     if (!token) {
         return res.status(403).send({ message: "No token provided"});
     }
@@ -49,9 +48,30 @@ verifyToken = (req, res, next) =>{
         if (err) {
             return res.status(401).send({ message: "Unauthorized"});
         }
-        req.id = decoded.id;
         next();
     })
+}
+
+setPassword = (req, res) => {
+    let token = req.headers["x-access-token"];
+    let userID = "";
+    let newPassword = bcrypt.hashSync(req.body.newpassword, 8);
+    jwt.verify(token, config.secret, (err, decoded) =>{
+        userID = decoded.id;
+    });
+    
+    User.findById(userID, function (err, user) {
+        if (err)
+            res.send(err);
+        user.Password = newPassword;
+        user.save(function (err) {
+            if (err)
+                res.json(err);
+            res.json({
+                message: 'Password Reset',
+            });
+        });
+    });
 }
 
 validToken = (req, res) => {
@@ -59,7 +79,7 @@ validToken = (req, res) => {
 }
 
 const authJwt = {
-    auth, verifyToken, validToken
+    auth, verifyToken, validToken, setPassword
 };
 
 module.exports = authJwt;
