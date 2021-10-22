@@ -39,7 +39,7 @@ sendPasswordResetEmail = async (req, res) =>{
           subject: "We have received your request...", 
           html: "<b>Password Reset</b><p>We have received your request for a password reset. " +
           "Please click on this link to be redirected to do your password reset:" +
-           `<a href='http://localhost:4200/welcome/set-password?token=${token}'>Reset Password</a></p>`,
+           `<a href='http://localhost:4200/welcome/set-password/${token}'>Reset Password</a></p>`,
         }).catch((err) =>{
             return res.status(500).send({ message: "Unable to send email. Server error."});
         });
