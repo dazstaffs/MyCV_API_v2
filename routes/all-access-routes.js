@@ -1,6 +1,7 @@
 const langController = require("../controllers/languageController");
 const registerController = require("../controllers/registerController");
 const authController = require("../controllers/authController");
+const emailController = require("../controllers/emailController");
 
 module.exports = function(app){
     app.use(function(req, res, next) {
@@ -14,4 +15,5 @@ module.exports = function(app){
     app.get("/api/languages", langController.index);
     app.post("/api/register", [registerController.checkDuplicateUsername], registerController.register);
     app.post("/api/authenticate", authController.auth);
+    app.post("/api/sendPasswordResetEmail", emailController.sendPasswordResetEmail);
 }
