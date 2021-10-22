@@ -13,7 +13,7 @@ auth = function (req, res) {
             }
 
             if (!user) {
-                return res.status(404).send({ message: "User Not found." });
+                return res.status(404).send({ message: "User Not Found." });
             }
 
             var passwordIsValid = bcrypt.compareSync(
@@ -54,8 +54,12 @@ verifyToken = (req, res, next) =>{
     })
 }
 
+validToken = (req, res) => {
+    return res.status(200).send({ message: "OK"});
+}
+
 const authJwt = {
-    auth, verifyToken
+    auth, verifyToken, validToken
 };
 
 module.exports = authJwt;

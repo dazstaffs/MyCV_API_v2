@@ -1,4 +1,3 @@
-const controller = require("../controllers/languageController");
 const authController = require("../controllers/authController");
 
 module.exports = function(app){
@@ -10,5 +9,5 @@ module.exports = function(app){
         next();
     });
 
-    app.get("/api/test/languages", [authController.verifyToken], controller.index);
+    app.post("/api/sessionValid", [authController.verifyToken], authController.validToken);
 }
