@@ -1,19 +1,18 @@
 const mongoose = require("mongoose");
-const Schema = require('mongoose').Schema;
+const Schema = require("mongoose").Schema;
 
 var userSchema = mongoose.Schema({
-    FirstName: String,
-    LastName: String,
-    Town: String,
-    County: String,
-    PostCode: String,
-    HomeTelephone: String,
-    Mobile: String,
-    EmailAddress: String,
-    Password: String
+  FirstName: String,
+  LastName: String,
+  Town: String,
+  County: String,
+  HomeTelephone: String,
+  Mobile: String,
+  EmailAddress: String,
+  Password: String,
 });
 
-var User = module.exports = mongoose.model('users', userSchema);
+var User = (module.exports = mongoose.model("users", userSchema));
 module.exports.get = function (callback, limit) {
-    User.find(callback).limit(limit);
-}
+  User.find(callback).limit(limit);
+};
