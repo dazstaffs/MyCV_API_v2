@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = require("mongoose").Schema;
 
 var cvSchema = mongoose.Schema({
+  userId: String,
   cvName: String,
   personalStatement: String,
   employmentHistory: [
@@ -30,7 +31,7 @@ var cvSchema = mongoose.Schema({
   hobbiesStatement: String,
 });
 
-var User = (module.exports = mongoose.model("user-cv", cvSchema));
+var UserCV = (module.exports = mongoose.model("user-cvs", cvSchema));
 module.exports.get = function (callback, limit) {
-  User.find(callback).limit(limit);
+  UserCV.find(callback).limit(limit);
 };

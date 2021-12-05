@@ -21,4 +21,9 @@ module.exports = function (app) {
     authController.setPassword
   );
   app.post("/api/save-cv", [authController.verifyToken], cvController.addCV);
+  app.get(
+    "/api/get-cvs",
+    [authController.verifyToken],
+    cvController.getUserCVs
+  );
 };
