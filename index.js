@@ -1,35 +1,38 @@
-let express = require('express');
-let mongoose = require('mongoose');
+let express = require("express");
+let mongoose = require("mongoose");
 
 let app = express();
-const cors = require('cors');
+const cors = require("cors");
 
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost/my-cv', { useNewUrlParser: true});
-var db = mongoose.connection;
+mongoose.connect("mongodb://localhost/my-cv", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-
-if(!db)
-    console.log("Error connecting db")
-else
-    console.log("Db connected successfully")
-
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Database Connected Successfully");
+});
 
 var port = process.env.PORT || 8080;
 const options = {
-    origin: 'http://localhost:4200',
-    }
+  origin: "http://localhost:4200",
+};
 
-app.use(cors(options))
+app.use(cors(options));
 
 //routes
-require('./routes/restricted-access-routes')(app);
-require('./routes/all-access-routes')(app);
+require("./routes/restricted-access-routes")(app);
+require("./routes/all-access-routes")(app);
 
 app.listen(port, function () {
-    console.log("My CV API is listening on port " + port);
+  console.log("My CV API is listening on port " + port);
 });
