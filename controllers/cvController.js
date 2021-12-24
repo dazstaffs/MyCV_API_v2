@@ -34,15 +34,81 @@ getUserCVs = (req, res) => {
     }
     res.json({
       status: "success",
-      message: "CVs retrieved successfully",
+      message: "CVs retrieved",
       data: cvs,
     });
+  });
+};
+
+getUserCV = (req, res) => {
+  let userId = authService.getUserID(req);
+  let cvID = req.body;
+  CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
+    if (err) {
+      res.json({
+        status: "error",
+        message: err,
+      });
+    }
+    res.json({
+      status: "success",
+      message: "CV retrieved",
+      data: cv,
+    });
+  });
+};
+
+copyUserCV = (req, res) => {
+  let userId = authService.getUserID(req);
+  let cvID = req.body;
+  CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
+    if (err) {
+      res.json({
+        status: "error",
+        message: err,
+      });
+    }
+    res.json({
+      status: "success",
+      message: "CV Copied",
+      data: cv,
+    });
+  });
+};
+
+deleteUserCV = (req, res) => {
+  let userId = authService.getUserID(req);
+  let cvID = req.body.cvID;
+  console.log(cvID);
+  CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
+    if (err) {
+      res.json({
+        status: "error",
+        message: err,
+      });
+    } else {
+      CV.deleteOne(
+        {
+          _id: cvID,
+        },
+        function (err, cv) {
+          if (err) res.send(err);
+          res.json({
+            status: "success",
+            message: "CV Deleted",
+          });
+        }
+      );
+    }
   });
 };
 
 const methods = {
   addCV,
   getUserCVs,
+  getUserCV,
+  copyUserCV,
+  deleteUserCV,
 };
 
 module.exports = methods;
