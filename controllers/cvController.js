@@ -44,7 +44,7 @@ getUserCVs = (req, res) => {
 
 getUserCV = (req, res) => {
   let userId = authService.getUserID(req);
-  let cvID = req.body;
+  let cvID = req.body.cvID;
   CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
     if (err) {
       res.json({
@@ -62,19 +62,34 @@ getUserCV = (req, res) => {
 
 copyUserCV = (req, res) => {
   let userId = authService.getUserID(req);
-  let cvID = req.body;
-  CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
+  let cvID = req.body.cvID;
+  CV.findOne({ UserId: userId, _id: cvID }).exec((err, cv) => {
     if (err) {
       res.json({
         status: "error",
         message: err,
       });
+    } else {
+      cv.isNew = true;
+      cv._id = null;
+      cv.cvName = cv.cvName + " - copy";
+      cv.createdDate = new Date();
+      cv.lastEditedDate = null;
+      cv.save(function (err) {
+        if (err) {
+          res.json({
+            status: "error",
+            message: err,
+          });
+        } else {
+          res.json({
+            status: "success",
+            message: "CV copied",
+            data: cv,
+          });
+        }
+      });
     }
-    res.json({
-      status: "success",
-      message: "CV Copied",
-      data: cv,
-    });
   });
 };
 
