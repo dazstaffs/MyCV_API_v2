@@ -10,6 +10,8 @@ addCV = (req, res) => {
   cv.education = req.body.education;
   cv.skills = req.body.skills;
   cv.hobbiesStatement = req.body.hobbiesStatement;
+  cv.createdDate = req.body.createdDate;
+  cv.lastEditedDate = req.body.lastEditedDate;
 
   cv.save(function (err) {
     if (err) {
@@ -79,26 +81,17 @@ copyUserCV = (req, res) => {
 deleteUserCV = (req, res) => {
   let userId = authService.getUserID(req);
   let cvID = req.body.cvID;
-  console.log(cvID);
-  CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
+  CV.findOneAndDelete({ UserId: userId, _id: cvID }).exec((err, cv) => {
     if (err) {
       res.json({
         status: "error",
         message: err,
       });
     } else {
-      CV.deleteOne(
-        {
-          _id: cvID,
-        },
-        function (err, cv) {
-          if (err) res.send(err);
-          res.json({
-            status: "success",
-            message: "CV Deleted",
-          });
-        }
-      );
+      res.json({
+        status: "success",
+        message: "CV Copied",
+      });
     }
   });
 };
