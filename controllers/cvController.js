@@ -13,6 +13,7 @@ addCV = (req, res) => {
   cv.hobbiesStatement = req.body.hobbiesStatement;
   cv.createdDate = req.body.createdDate;
   cv.lastEditedDate = req.body.lastEditedDate;
+  cv.isFinished = req.body.isFinished;
 
   cv.save(function (err) {
     if (err) {

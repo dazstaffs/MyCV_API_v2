@@ -7,6 +7,7 @@ var cvSchema = mongoose.Schema({
   personalStatement: String,
   createdDate: Date,
   lastEditedDate: Date,
+  isFinished: Boolean,
   employmentHistory: [
     // {
     //   employerName: '',
