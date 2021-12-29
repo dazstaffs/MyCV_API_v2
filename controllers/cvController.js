@@ -1,5 +1,6 @@
 CV = require("../models/cvModel");
 authService = require("../controllers/authController");
+const mongoose = require("mongoose");
 
 addCV = (req, res) => {
   let cv = new CV();
@@ -70,22 +71,23 @@ copyUserCV = (req, res) => {
         message: err,
       });
     } else {
+      cv._id = mongoose.Types.ObjectId();
       cv.isNew = true;
-      cv._id = null;
       cv.cvName = cv.cvName + " - copy";
       cv.createdDate = new Date();
       cv.lastEditedDate = null;
-      cv.save(function (err) {
+      cv.save(function (err, newCV) {
         if (err) {
           res.json({
             status: "error",
             message: err,
           });
         } else {
+          console.log(newCV);
           res.json({
             status: "success",
             message: "CV copied",
-            data: cv,
+            data: newCV,
           });
         }
       });
