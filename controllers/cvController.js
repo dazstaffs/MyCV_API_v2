@@ -44,24 +44,6 @@ getUserCVs = (req, res) => {
   });
 };
 
-getUserCV = (req, res) => {
-  let userId = authService.getUserID(req);
-  let cvID = req.body.cvID;
-  CV.find({ UserId: userId, _id: cvID }).exec((err, cv) => {
-    if (err) {
-      res.json({
-        status: "error",
-        message: err,
-      });
-    }
-    res.json({
-      status: "success",
-      message: "CV retrieved",
-      data: cv,
-    });
-  });
-};
-
 copyUserCV = (req, res) => {
   let userId = authService.getUserID(req);
   let cvID = req.body.cvID;
@@ -117,7 +99,6 @@ deleteUserCV = (req, res) => {
 const methods = {
   addCV,
   getUserCVs,
-  getUserCV,
   copyUserCV,
   deleteUserCV,
 };

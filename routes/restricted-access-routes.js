@@ -26,7 +26,6 @@ module.exports = function (app) {
     [authController.verifyToken],
     cvController.getUserCVs
   );
-  app.get("/api/get-cv", [authController.verifyToken], cvController.getUserCV);
   app.post(
     "/api/delete-cv",
     [authController.verifyToken],
