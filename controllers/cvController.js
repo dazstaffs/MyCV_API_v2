@@ -73,7 +73,7 @@ copyUserCV = (req, res) => {
     } else {
       cv._id = mongoose.Types.ObjectId();
       cv.isNew = true;
-      cv.cvName = cv.cvName + " - copy";
+      cv.cvName = cv.cvName + " - Copy";
       cv.createdDate = new Date();
       cv.lastEditedDate = null;
       cv.save(function (err, newCV) {
