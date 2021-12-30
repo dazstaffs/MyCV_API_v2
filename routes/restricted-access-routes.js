@@ -52,4 +52,9 @@ module.exports = function (app) {
     [authController.verifyToken],
     cvController.copyUserCV
   );
+  app.post(
+    "/api/update-user",
+    [authController.verifyToken],
+    userController.updateUser
+  );
 };
