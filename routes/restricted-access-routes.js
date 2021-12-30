@@ -1,5 +1,6 @@
 const authController = require("../controllers/authController");
 const cvController = require("../controllers/cvController");
+const userController = require("../controllers/userController");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -10,6 +11,20 @@ module.exports = function (app) {
     next();
   });
 
+  //Gets
+  app.get(
+    "/api/get-cvs",
+    [authController.verifyToken],
+    cvController.getUserCVs
+  );
+
+  app.get(
+    "/api/get-user",
+    [authController.verifyToken],
+    userController.getUser
+  );
+
+  //Posts
   app.post(
     "/api/sessionValid",
     [authController.verifyToken],
@@ -21,11 +36,12 @@ module.exports = function (app) {
     authController.setPassword
   );
   app.post("/api/save-cv", [authController.verifyToken], cvController.addCV);
-  app.get(
-    "/api/get-cvs",
+  app.post(
+    "/api/update-cv",
     [authController.verifyToken],
-    cvController.getUserCVs
+    cvController.updateCV
   );
+
   app.post(
     "/api/delete-cv",
     [authController.verifyToken],

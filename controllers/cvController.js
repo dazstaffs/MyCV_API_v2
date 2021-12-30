@@ -15,13 +15,48 @@ addCV = (req, res) => {
   cv.lastEditedDate = req.body.lastEditedDate;
   cv.isFinished = req.body.isFinished;
 
-  cv.save(function (err) {
+  cv.save(function (err, newCV) {
     if (err) {
       res.status(401).send({ err });
     } else {
       res.status(201).send({
         message: "CV Saved",
-        data: cv,
+        data: newCV,
+      });
+    }
+  });
+};
+
+updateCV = (req, res) => {
+  let userId = authService.getUserID(req);
+  let cvID = req.body._id;
+  CV.findOne({ UserId: userId, _id: cvID }).exec((err, cv) => {
+    if (err) {
+      res.json({
+        status: "error",
+        message: err,
+      });
+    } else {
+      cv.cvName = req.body.cvName;
+      cv.personalStatement = req.body.personalStatement;
+      cv.employmentHistory = req.body.employmentHistory;
+      cv.education = req.body.education;
+      cv.skills = req.body.skills;
+      cv.hobbiesStatement = req.body.hobbiesStatement;
+      cv.lastEditedDate = new Date();
+      cv.save(function (err, newCV) {
+        if (err) {
+          res.json({
+            status: "error",
+            message: err,
+          });
+        } else {
+          res.json({
+            status: "success",
+            message: "CV Updated",
+            data: newCV,
+          });
+        }
       });
     }
   });
@@ -66,7 +101,6 @@ copyUserCV = (req, res) => {
             message: err,
           });
         } else {
-          console.log(newCV);
           res.json({
             status: "success",
             message: "CV copied",
@@ -101,6 +135,7 @@ const methods = {
   getUserCVs,
   copyUserCV,
   deleteUserCV,
+  updateCV,
 };
 
 module.exports = methods;
