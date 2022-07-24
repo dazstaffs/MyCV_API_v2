@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Schema = require("mongoose").Schema;
 
 var userSchema = mongoose.Schema({
   FirstName: String,

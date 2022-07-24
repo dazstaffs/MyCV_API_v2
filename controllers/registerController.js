@@ -1,6 +1,8 @@
 const UserCredential = require("../models/userModel");
 const User = require("../models/userModel");
 var bcrypt = require("bcryptjs");
+const AccountType = require("../models/accountTypeModel");
+const UserType = require("../models/userTypeModel");
 
 checkDuplicateUsername = (req, res, next) => {
   UserCredential.findOne({
@@ -34,8 +36,38 @@ register = (req, res) => {
       console.log("Error");
       res.status(500).send({ message: err });
     } else {
+      setAccountType(user);
       console.log("User Created");
       res.status(200).send({ message: "User Created" });
+    }
+  });
+};
+
+setAccountType = (user) => {
+  AccountType.findOne({
+    active: true,
+    tier: "T1",
+    accountTypeName: "Standard",
+  }).exec((err, userType) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      //set user account type
+      const newUserType = new UserType({
+        accountType: userType._id,
+        userID: user._id,
+      });
+
+      newUserType.save((err, newUserType) => {
+        if (err) {
+          console.log("Error");
+          return;
+        } else {
+          console.log("User Type Set");
+          return;
+        }
+      });
     }
   });
 };

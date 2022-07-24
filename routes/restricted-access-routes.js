@@ -1,6 +1,7 @@
 const authController = require("../controllers/authController");
 const cvController = require("../controllers/cvController");
 const userController = require("../controllers/userController");
+const accountTypeController = require("../controllers/accountTypeController");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -22,6 +23,12 @@ module.exports = function (app) {
     "/api/get-user",
     [authController.verifyToken],
     userController.getUser
+  );
+
+  app.get(
+    "/api/get-subscriptions",
+    [authController.verifyToken],
+    accountTypeController.getAccountTypes
   );
 
   //Posts
