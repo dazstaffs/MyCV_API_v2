@@ -31,6 +31,12 @@ module.exports = function (app) {
     accountTypeController.getAccountTypes
   );
 
+  app.get(
+    "/api/get-user-subscription",
+    [authController.verifyToken],
+    accountTypeController.getUserAccountType
+  );
+
   //Posts
   app.post(
     "/api/sessionValid",

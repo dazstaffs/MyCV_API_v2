@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = require("mongoose").Schema;
 
 var cvSchema = mongoose.Schema({
   userId: String,
@@ -7,29 +8,9 @@ var cvSchema = mongoose.Schema({
   createdDate: Date,
   lastEditedDate: Date,
   isFinished: Boolean,
-  employmentHistory: [
-    // {
-    //   employerName: '',
-    //   jobTitle: '',
-    //   startDate: '2021-12-04T21:35:50.047Z',
-    //   endDate: '2021-12-04T21:35:50.047Z',
-    //   achievements: [Array]
-    // }
-  ],
-  education: [
-    // {
-    //   institutionName: '',
-    //   level: '',
-    //   courseName: '',
-    //   grade: '',
-    //   startDate: '2021-12-04T21:35:50.047Z',
-    //   endDate: '2021-12-04T21:35:50.047Z',
-    //   achievements: []
-    // }
-  ],
-  skills: [
-    // { skillName: '', experienceID: 0 }
-  ],
+  employmentHistory: [Schema.Types.Mixed],
+  education: [Schema.Types.Mixed],
+  skills: [Schema.Types.Mixed],
   hobbiesStatement: String,
 });
 
