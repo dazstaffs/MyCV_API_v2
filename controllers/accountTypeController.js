@@ -22,6 +22,27 @@ exports.getAccountTypes = function (req, res) {
   });
 };
 
+exports.updateUserAccountType = function (req, res) {
+  let userID = authService.getUserID(req);
+  AccountType.findOne({ accountTypeName: req.body.type }).exec(
+    (err, accType) => {
+      UserAccountType.findOne(
+        { userID: userID },
+        function (err, userAccountType) {
+          if (err) res.send(err);
+          userAccountType.accountType = accType._id;
+          userAccountType.save(function (err) {
+            if (err) res.json(err);
+            res.json({
+              message: "OK",
+            });
+          });
+        }
+      );
+    }
+  );
+};
+
 exports.getUserAccountType = function (req, res) {
   let userId = authService.getUserID(req);
   UserAccountType.findOne({ userID: userId }).exec((err, userAccType) => {
