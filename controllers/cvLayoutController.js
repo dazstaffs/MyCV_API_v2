@@ -1,7 +1,6 @@
 UserCVLayout = require("../models/userCVLayoutModel");
 
 exports.getCVLayout = (req, res) => {
-  console.log("fetching layout");
   UserCVLayout.findOne({ cvID: req.body.cvid }, function (err, layout) {
     if (err) {
       res.json({
