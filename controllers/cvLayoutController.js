@@ -16,3 +16,25 @@ exports.getCVLayout = (req, res) => {
     }
   });
 };
+
+exports.setCVLayout = (req, res) => {
+  UserCVLayout.findOneAndUpdate(
+    { cvID: req.body.cvid },
+    { $set: { layoutID: req.body.newTemplate } },
+    { upsert: true },
+    function (err, doc) {
+      if (err) {
+        res.json({
+          status: "error",
+          message: err,
+        });
+      } else {
+        res.json({
+          status: "success",
+          message: "user cv layout retrieved successfully",
+          data: doc,
+        });
+      }
+    }
+  );
+};

@@ -69,6 +69,12 @@ module.exports = function (app) {
   );
 
   app.post(
+    "/api/set-cv-layout",
+    [authController.verifyToken],
+    cvLayoutController.setCVLayout
+  );
+
+  app.post(
     "/api/delete-cv",
     [authController.verifyToken],
     cvController.deleteUserCV
