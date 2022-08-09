@@ -38,6 +38,12 @@ module.exports = function (app) {
     accountTypeController.getUserAccountType
   );
 
+  app.get(
+    "/api/get-cv-layouts",
+    [authController.verifyToken],
+    cvLayoutController.getAllCVLayouts
+  );
+
   //Posts
   app.post(
     "/api/sessionValid",
