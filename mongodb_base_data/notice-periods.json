@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f0"
+  },
+  "Period": "1 Week"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f1"
+  },
+  "Period": "2 Weeks"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f2"
+  },
+  "Period": "3 Weeks"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f3"
+  },
+  "Period": "4 Weeks"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f4"
+  },
+  "Period": "1 Month"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f5"
+  },
+  "Period": "2 Months"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f6"
+  },
+  "Period": "3 Months"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f7"
+  },
+  "Period": "3+ Months"
+},{
+  "_id": {
+    "$oid": "614fbc25a01c609acb0f15f8"
+  },
+  "Period": "Other"
+}]

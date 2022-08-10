@@ -1,0 +1,156 @@
+[{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15cb"
+  },
+  "JobSector": "Information Technology"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15cc"
+  },
+  "JobSector": "Accounting "
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15cd"
+  },
+  "JobSector": "Banking"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15ce"
+  },
+  "JobSector": "Finance"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15cf"
+  },
+  "JobSector": "Charity & Voluntary Work"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d0"
+  },
+  "JobSector": "Marketing"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d1"
+  },
+  "JobSector": "Sales"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d2"
+  },
+  "JobSector": "Engineering"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d3"
+  },
+  "JobSector": "Manufacturing"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d4"
+  },
+  "JobSector": "Energy"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d5"
+  },
+  "JobSector": "Utilies"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d6"
+  },
+  "JobSector": "Environment & Agriculture"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d7"
+  },
+  "JobSector": "Healthcare"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d8"
+  },
+  "JobSector": "Hospitality & Event Management"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15d9"
+  },
+  "JobSector": "Civil Servant"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15da"
+  },
+  "JobSector": "Law"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15db"
+  },
+  "JobSector": "Law Enforcement & Security"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15dc"
+  },
+  "JobSector": "Leisure & Sport"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15dd"
+  },
+  "JobSector": "Tourism"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15de"
+  },
+  "JobSector": "Advertising & PR"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15df"
+  },
+  "JobSector": "Media"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e0"
+  },
+  "JobSector": "Property"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e1"
+  },
+  "JobSector": "Construction"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e2"
+  },
+  "JobSector": "Recruitment"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e3"
+  },
+  "JobSector": "HR"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e4"
+  },
+  "JobSector": "Pharmaceuticals"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e5"
+  },
+  "JobSector": "Social Care"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e6"
+  },
+  "JobSector": "Education"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e7"
+  },
+  "JobSector": "Transport"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e8"
+  },
+  "JobSector": "Logisitics"
+},{
+  "_id": {
+    "$oid": "614fbbdea01c609acb0f15e9"
+  },
+  "JobSector": "Software Development & Engineering"
+}]

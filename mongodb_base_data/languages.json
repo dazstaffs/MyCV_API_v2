@@ -1,0 +1,1464 @@
+[{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1476"
+  },
+  "LanguageName": "English(UK)",
+  "LanguageCode": "en-GB",
+  "IsSupported": true
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1477"
+  },
+  "LanguageName": "English(US)",
+  "LanguageCode": "en-US",
+  "IsSupported": true
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1478"
+  },
+  "LanguageName": "Afrikaans(ZA)",
+  "LanguageCode": "af-ZA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1479"
+  },
+  "LanguageName": "Albanian(AL)",
+  "LanguageCode": "sq-AL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f147a"
+  },
+  "LanguageName": "Alsatian(FR)",
+  "LanguageCode": "gsw-FR    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f147b"
+  },
+  "LanguageName": "Amharic(ET)",
+  "LanguageCode": "am-ET     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f147c"
+  },
+  "LanguageName": "Arabic(AE)",
+  "LanguageCode": "ar-AE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f147d"
+  },
+  "LanguageName": "Arabic(BH)",
+  "LanguageCode": "ar-BH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f147e"
+  },
+  "LanguageName": "Arabic(DZ)",
+  "LanguageCode": "ar-DZ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f147f"
+  },
+  "LanguageName": "Arabic(EG)",
+  "LanguageCode": "ar-EG     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1480"
+  },
+  "LanguageName": "Arabic(IQ)",
+  "LanguageCode": "ar-IQ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1481"
+  },
+  "LanguageName": "Arabic(JO)",
+  "LanguageCode": "ar-JO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1482"
+  },
+  "LanguageName": "Arabic(KW)",
+  "LanguageCode": "ar-KW     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1483"
+  },
+  "LanguageName": "Arabic(LB)",
+  "LanguageCode": "ar-LB     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1484"
+  },
+  "LanguageName": "Arabic(LY)",
+  "LanguageCode": "ar-LY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1485"
+  },
+  "LanguageName": "Arabic(MA)",
+  "LanguageCode": "ar-MA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1486"
+  },
+  "LanguageName": "Arabic(OM)",
+  "LanguageCode": "ar-OM     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1487"
+  },
+  "LanguageName": "Arabic(QA)",
+  "LanguageCode": "ar-QA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1488"
+  },
+  "LanguageName": "Arabic(SA)",
+  "LanguageCode": "ar-SA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1489"
+  },
+  "LanguageName": "Arabic(SY)",
+  "LanguageCode": "ar-SY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f148a"
+  },
+  "LanguageName": "Arabic(TN)",
+  "LanguageCode": "ar-TN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f148b"
+  },
+  "LanguageName": "Arabic(YE)",
+  "LanguageCode": "ar-YE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f148c"
+  },
+  "LanguageName": "Armenian(AM)",
+  "LanguageCode": "hy-AM     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f148d"
+  },
+  "LanguageName": "Assamese(IN)",
+  "LanguageCode": "as-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f148e"
+  },
+  "LanguageName": "Azeri(AZ)",
+  "LanguageCode": "az-Cyrl-AZ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f148f"
+  },
+  "LanguageName": "Azeri(AZ)",
+  "LanguageCode": "az-Latn-AZ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1490"
+  },
+  "LanguageName": "Bashkir(RU)",
+  "LanguageCode": "ba-RU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1491"
+  },
+  "LanguageName": "Basque(ES)",
+  "LanguageCode": "eu-ES     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1492"
+  },
+  "LanguageName": "Belarusian(BY)",
+  "LanguageCode": "be-BY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1493"
+  },
+  "LanguageName": "Bengali(BD)",
+  "LanguageCode": "bn-BD     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1494"
+  },
+  "LanguageName": "Bengali(IN)",
+  "LanguageCode": "bn-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1495"
+  },
+  "LanguageName": "Bosnian(BA)",
+  "LanguageCode": "bs-Cyrl-BA",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1496"
+  },
+  "LanguageName": "Bosnian(BA)",
+  "LanguageCode": "bs-Latn-BA",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1497"
+  },
+  "LanguageName": "Breton(FR)",
+  "LanguageCode": "br-FR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1498"
+  },
+  "LanguageName": "Bulgarian(BG)",
+  "LanguageCode": "bg-BG     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1499"
+  },
+  "LanguageName": "Catalan(ES)",
+  "LanguageCode": "ca-ES     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f149a"
+  },
+  "LanguageName": "Chinese(CN)",
+  "LanguageCode": "zh-CN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f149b"
+  },
+  "LanguageName": "Chinese(HK)",
+  "LanguageCode": "zh-HK     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f149c"
+  },
+  "LanguageName": "Chinese(MO)",
+  "LanguageCode": "zh-MO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f149d"
+  },
+  "LanguageName": "Chinese(SG)",
+  "LanguageCode": "zh-SG     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f149e"
+  },
+  "LanguageName": "Chinese(TW)",
+  "LanguageCode": "zh-TW     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f149f"
+  },
+  "LanguageName": "Corsican(FR)",
+  "LanguageCode": "co-FR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a0"
+  },
+  "LanguageName": "Croatian(BA)",
+  "LanguageCode": "hr-BA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a1"
+  },
+  "LanguageName": "Croatian(HR)",
+  "LanguageCode": "hr-HR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a2"
+  },
+  "LanguageName": "Czech(CZ)",
+  "LanguageCode": "cs-CZ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a3"
+  },
+  "LanguageName": "Danish(DK)",
+  "LanguageCode": "da-DK     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a4"
+  },
+  "LanguageName": "Dari(AF)",
+  "LanguageCode": "prs-AF    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a5"
+  },
+  "LanguageName": "Divehi(MV)",
+  "LanguageCode": "dv-MV     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a6"
+  },
+  "LanguageName": "Dutch(BE)",
+  "LanguageCode": "nl-BE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a7"
+  },
+  "LanguageName": "Dutch(NL)",
+  "LanguageCode": "nl-NL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a8"
+  },
+  "LanguageName": "English(29)",
+  "LanguageCode": "en-029    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14a9"
+  },
+  "LanguageName": "English(AU)",
+  "LanguageCode": "en-AU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14aa"
+  },
+  "LanguageName": "English(BZ)",
+  "LanguageCode": "en-BZ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ab"
+  },
+  "LanguageName": "English(CA)",
+  "LanguageCode": "en-CA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ac"
+  },
+  "LanguageName": "English(IE)",
+  "LanguageCode": "en-IE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ad"
+  },
+  "LanguageName": "English(IN)",
+  "LanguageCode": "en-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ae"
+  },
+  "LanguageName": "English(JM)",
+  "LanguageCode": "en-JM     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14af"
+  },
+  "LanguageName": "English(MY)",
+  "LanguageCode": "en-MY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b0"
+  },
+  "LanguageName": "English(NZ)",
+  "LanguageCode": "en-NZ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b1"
+  },
+  "LanguageName": "English(PH)",
+  "LanguageCode": "en-PH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b2"
+  },
+  "LanguageName": "English(SG)",
+  "LanguageCode": "en-SG     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b3"
+  },
+  "LanguageName": "English(TT)",
+  "LanguageCode": "en-TT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b4"
+  },
+  "LanguageName": "English(ZA)",
+  "LanguageCode": "en-ZA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b5"
+  },
+  "LanguageName": "English(ZW)",
+  "LanguageCode": "en-ZW     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b6"
+  },
+  "LanguageName": "Estonian(EE)",
+  "LanguageCode": "et-EE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b7"
+  },
+  "LanguageName": "Faroese(FO)",
+  "LanguageCode": "fo-FO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b8"
+  },
+  "LanguageName": "Filipino(PH)",
+  "LanguageCode": "fil-PH    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14b9"
+  },
+  "LanguageName": "Finnish(FI)",
+  "LanguageCode": "fi-FI     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ba"
+  },
+  "LanguageName": "French(BE)",
+  "LanguageCode": "fr-BE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14bb"
+  },
+  "LanguageName": "French(CA)",
+  "LanguageCode": "fr-CA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14bc"
+  },
+  "LanguageName": "French(CH)",
+  "LanguageCode": "fr-CH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14bd"
+  },
+  "LanguageName": "French(FR)",
+  "LanguageCode": "fr-FR",
+  "IsSupported": true
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14be"
+  },
+  "LanguageName": "French(LU)",
+  "LanguageCode": "fr-LU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14bf"
+  },
+  "LanguageName": "French(MC)",
+  "LanguageCode": "fr-MC     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c0"
+  },
+  "LanguageName": "Frisian(NL)",
+  "LanguageCode": "fy-NL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c1"
+  },
+  "LanguageName": "Galician(ES)",
+  "LanguageCode": "gl-ES     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c2"
+  },
+  "LanguageName": "Georgian(GE)",
+  "LanguageCode": "ka-GE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c3"
+  },
+  "LanguageName": "German(AT)",
+  "LanguageCode": "de-AT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c4"
+  },
+  "LanguageName": "German(CH)",
+  "LanguageCode": "de-CH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c5"
+  },
+  "LanguageName": "German(DE)",
+  "LanguageCode": "de-DE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c6"
+  },
+  "LanguageName": "German(LI)",
+  "LanguageCode": "de-LI     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c7"
+  },
+  "LanguageName": "German(LU)",
+  "LanguageCode": "de-LU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c8"
+  },
+  "LanguageName": "Greek(GR)",
+  "LanguageCode": "el-GR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14c9"
+  },
+  "LanguageName": "Greenlandic(GL)",
+  "LanguageCode": "kl-GL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ca"
+  },
+  "LanguageName": "Gujarati(IN)",
+  "LanguageCode": "gu-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14cb"
+  },
+  "LanguageName": "Hausa(NG)",
+  "LanguageCode": "ha-Latn-NG",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14cc"
+  },
+  "LanguageName": "Hebrew(IL)",
+  "LanguageCode": "he-IL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14cd"
+  },
+  "LanguageName": "Hindi(IN)",
+  "LanguageCode": "hi-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ce"
+  },
+  "LanguageName": "Hungarian(HU)",
+  "LanguageCode": "hu-HU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14cf"
+  },
+  "LanguageName": "Icelandic(IS)",
+  "LanguageCode": "is-IS     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d0"
+  },
+  "LanguageName": "Igbo(NG)",
+  "LanguageCode": "ig-NG     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d1"
+  },
+  "LanguageName": "Indonesian(ID)",
+  "LanguageCode": "id-ID     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d2"
+  },
+  "LanguageName": "Inuktitut(CA)",
+  "LanguageCode": "iu-Cans-CA",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d3"
+  },
+  "LanguageName": "Inuktitut(CA)",
+  "LanguageCode": "iu-Latn-CA",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d4"
+  },
+  "LanguageName": "Irish(IE)",
+  "LanguageCode": "ga-IE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d5"
+  },
+  "LanguageName": "isiXhosa(ZA)",
+  "LanguageCode": "xh-ZA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d6"
+  },
+  "LanguageName": "isiZulu(ZA)",
+  "LanguageCode": "zu-ZA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d7"
+  },
+  "LanguageName": "Italian(CH)",
+  "LanguageCode": "it-CH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d8"
+  },
+  "LanguageName": "Italian(IT)",
+  "LanguageCode": "it-IT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14d9"
+  },
+  "LanguageName": "Japanese(JP)",
+  "LanguageCode": "ja-JP     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14da"
+  },
+  "LanguageName": "Kannada(IN)",
+  "LanguageCode": "kn-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14db"
+  },
+  "LanguageName": "Kazakh(KZ)",
+  "LanguageCode": "kk-KZ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14dc"
+  },
+  "LanguageName": "Khmer(KH)",
+  "LanguageCode": "km-KH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14dd"
+  },
+  "LanguageName": "K'iche(GT)",
+  "LanguageCode": "qut-GT    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14de"
+  },
+  "LanguageName": "Kinyarwanda(RW)",
+  "LanguageCode": "rw-RW     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14df"
+  },
+  "LanguageName": "Kiswahili(KE)",
+  "LanguageCode": "sw-KE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e0"
+  },
+  "LanguageName": "Konkani(IN)",
+  "LanguageCode": "kok-IN    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e1"
+  },
+  "LanguageName": "Korean(KR)",
+  "LanguageCode": "ko-KR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e2"
+  },
+  "LanguageName": "Kyrgyz(KG)",
+  "LanguageCode": "ky-KG     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e3"
+  },
+  "LanguageName": "Lao(LA)",
+  "LanguageCode": "lo-LA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e4"
+  },
+  "LanguageName": "Latvian(LV)",
+  "LanguageCode": "lv-LV     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e5"
+  },
+  "LanguageName": "Lithuanian(LT)",
+  "LanguageCode": "lt-LT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e6"
+  },
+  "LanguageName": "Lower Sorbian(DE)",
+  "LanguageCode": "dsb-DE    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e7"
+  },
+  "LanguageName": "Luxembourgish(LU)",
+  "LanguageCode": "lb-LU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e8"
+  },
+  "LanguageName": "Macedonian(MK)",
+  "LanguageCode": "mk-MK     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14e9"
+  },
+  "LanguageName": "Malay(BN)",
+  "LanguageCode": "ms-BN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ea"
+  },
+  "LanguageName": "Malay(MY)",
+  "LanguageCode": "ms-MY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14eb"
+  },
+  "LanguageName": "Malayalam(IN)",
+  "LanguageCode": "ml-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ec"
+  },
+  "LanguageName": "Maltese(MT)",
+  "LanguageCode": "mt-MT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ed"
+  },
+  "LanguageName": "Maori(NZ)",
+  "LanguageCode": "mi-NZ     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ee"
+  },
+  "LanguageName": "Mapudungun(CL)",
+  "LanguageCode": "arn-CL    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ef"
+  },
+  "LanguageName": "Marathi(IN)",
+  "LanguageCode": "mr-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f0"
+  },
+  "LanguageName": "Mohawk(CA)",
+  "LanguageCode": "moh-CA    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f1"
+  },
+  "LanguageName": "Mongolian(CN)",
+  "LanguageCode": "mn-Mong-CN",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f2"
+  },
+  "LanguageName": "Mongolian(MN)",
+  "LanguageCode": "mn-MN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f3"
+  },
+  "LanguageName": "Nepali(NP)",
+  "LanguageCode": "ne-NP     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f4"
+  },
+  "LanguageName": "Norwegian, BokmÃ¥l(NO)",
+  "LanguageCode": "nb-NO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f5"
+  },
+  "LanguageName": "Norwegian, Nynorsk(NO)",
+  "LanguageCode": "nn-NO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f6"
+  },
+  "LanguageName": "Occitan(FR)",
+  "LanguageCode": "oc-FR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f7"
+  },
+  "LanguageName": "Oriya(IN)",
+  "LanguageCode": "or-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f8"
+  },
+  "LanguageName": "Pashto(AF)",
+  "LanguageCode": "ps-AF     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14f9"
+  },
+  "LanguageName": "Persian(IR)",
+  "LanguageCode": "fa-IR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14fa"
+  },
+  "LanguageName": "Polish(PL)",
+  "LanguageCode": "pl-PL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14fb"
+  },
+  "LanguageName": "Portuguese(BR)",
+  "LanguageCode": "pt-BR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14fc"
+  },
+  "LanguageName": "Portuguese(PT)",
+  "LanguageCode": "pt-PT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14fd"
+  },
+  "LanguageName": "Punjabi(IN)",
+  "LanguageCode": "pa-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14fe"
+  },
+  "LanguageName": "Quechua(BO)",
+  "LanguageCode": "quz-BO    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f14ff"
+  },
+  "LanguageName": "Quechua(EC)",
+  "LanguageCode": "quz-EC    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1500"
+  },
+  "LanguageName": "Quechua(PE)",
+  "LanguageCode": "quz-PE    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1501"
+  },
+  "LanguageName": "Romanian(RO)",
+  "LanguageCode": "ro-RO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1502"
+  },
+  "LanguageName": "Romansh(CH)",
+  "LanguageCode": "rm-CH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1503"
+  },
+  "LanguageName": "Russian(RU)",
+  "LanguageCode": "ru-RU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1504"
+  },
+  "LanguageName": "Sami, Inari(FI)",
+  "LanguageCode": "smn-FI    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1505"
+  },
+  "LanguageName": "Sami, Lule(NO)",
+  "LanguageCode": "smj-NO    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1506"
+  },
+  "LanguageName": "Sami, Lule(SE)",
+  "LanguageCode": "smj-SE    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1507"
+  },
+  "LanguageName": "Sami, Northern(FI)",
+  "LanguageCode": "se-FI     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1508"
+  },
+  "LanguageName": "Sami, Northern(NO)",
+  "LanguageCode": "se-NO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1509"
+  },
+  "LanguageName": "Sami, Northern(SE)",
+  "LanguageCode": "se-SE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f150a"
+  },
+  "LanguageName": "Sami, Skolt(FI)",
+  "LanguageCode": "sms-FI    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f150b"
+  },
+  "LanguageName": "Sami, Southern(NO)",
+  "LanguageCode": "sma-NO    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f150c"
+  },
+  "LanguageName": "Sami, Southern(SE)",
+  "LanguageCode": "sma-SE    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f150d"
+  },
+  "LanguageName": "Sanskrit(IN)",
+  "LanguageCode": "sa-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f150e"
+  },
+  "LanguageName": "Scottish Gaelic(GB)",
+  "LanguageCode": "gd-GB     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f150f"
+  },
+  "LanguageName": "Serbian )(CS)",
+  "LanguageCode": "sr-Cyrl-CS",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1510"
+  },
+  "LanguageName": "Serbian )(CS)",
+  "LanguageCode": "sr-Latn-CS",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1511"
+  },
+  "LanguageName": "Serbian(BA)",
+  "LanguageCode": "sr-Cyrl-BA",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1512"
+  },
+  "LanguageName": "Serbian(BA)",
+  "LanguageCode": "sr-Latn-BA",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1513"
+  },
+  "LanguageName": "Serbian(ME)",
+  "LanguageCode": "sr-Cyrl-ME",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1514"
+  },
+  "LanguageName": "Serbian(ME)",
+  "LanguageCode": "sr-Latn-ME",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1515"
+  },
+  "LanguageName": "Serbian(RS)",
+  "LanguageCode": "sr-Cyrl-RS",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1516"
+  },
+  "LanguageName": "Serbian(RS)",
+  "LanguageCode": "sr-Latn-RS",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1517"
+  },
+  "LanguageName": "Sesotho sa Leboa(ZA)",
+  "LanguageCode": "nso-ZA    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1518"
+  },
+  "LanguageName": "Setswana(ZA)",
+  "LanguageCode": "tn-ZA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1519"
+  },
+  "LanguageName": "Sinhala(LK)",
+  "LanguageCode": "si-LK     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f151a"
+  },
+  "LanguageName": "Slovak(SK)",
+  "LanguageCode": "sk-SK     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f151b"
+  },
+  "LanguageName": "Slovenian(SI)",
+  "LanguageCode": "sl-SI     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f151c"
+  },
+  "LanguageName": "Spanish(AR)",
+  "LanguageCode": "es-AR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f151d"
+  },
+  "LanguageName": "Spanish(BO)",
+  "LanguageCode": "es-BO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f151e"
+  },
+  "LanguageName": "Spanish(CL)",
+  "LanguageCode": "es-CL     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f151f"
+  },
+  "LanguageName": "Spanish(CO)",
+  "LanguageCode": "es-CO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1520"
+  },
+  "LanguageName": "Spanish(CR)",
+  "LanguageCode": "es-CR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1521"
+  },
+  "LanguageName": "Spanish(DO)",
+  "LanguageCode": "es-DO     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1522"
+  },
+  "LanguageName": "Spanish(EC)",
+  "LanguageCode": "es-EC     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1523"
+  },
+  "LanguageName": "Spanish(ES)",
+  "LanguageCode": "es-ES     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1524"
+  },
+  "LanguageName": "Spanish(GT)",
+  "LanguageCode": "es-GT     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1525"
+  },
+  "LanguageName": "Spanish(HN)",
+  "LanguageCode": "es-HN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1526"
+  },
+  "LanguageName": "Spanish(MX)",
+  "LanguageCode": "es-MX     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1527"
+  },
+  "LanguageName": "Spanish(NI)",
+  "LanguageCode": "es-NI     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1528"
+  },
+  "LanguageName": "Spanish(PA)",
+  "LanguageCode": "es-PA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1529"
+  },
+  "LanguageName": "Spanish(PE)",
+  "LanguageCode": "es-PE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f152a"
+  },
+  "LanguageName": "Spanish(PR)",
+  "LanguageCode": "es-PR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f152b"
+  },
+  "LanguageName": "Spanish(PY)",
+  "LanguageCode": "es-PY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f152c"
+  },
+  "LanguageName": "Spanish(SV)",
+  "LanguageCode": "es-SV     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f152d"
+  },
+  "LanguageName": "Spanish(US)",
+  "LanguageCode": "es-US     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f152e"
+  },
+  "LanguageName": "Spanish(UY)",
+  "LanguageCode": "es-UY     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f152f"
+  },
+  "LanguageName": "Spanish(VE)",
+  "LanguageCode": "es-VE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1530"
+  },
+  "LanguageName": "Swedish(FI)",
+  "LanguageCode": "sv-FI     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1531"
+  },
+  "LanguageName": "Swedish(SE)",
+  "LanguageCode": "sv-SE     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1532"
+  },
+  "LanguageName": "Syriac(SY)",
+  "LanguageCode": "syr-SY    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1533"
+  },
+  "LanguageName": "Tajik(TJ)",
+  "LanguageCode": "tg-Cyrl-TJ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1534"
+  },
+  "LanguageName": "Tamil(IN)",
+  "LanguageCode": "ta-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1535"
+  },
+  "LanguageName": "Tatar(RU)",
+  "LanguageCode": "tt-RU     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1536"
+  },
+  "LanguageName": "Telugu(IN)",
+  "LanguageCode": "te-IN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1537"
+  },
+  "LanguageName": "Thai(TH)",
+  "LanguageCode": "th-TH     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1538"
+  },
+  "LanguageName": "Tibetan(CN)",
+  "LanguageCode": "bo-CN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1539"
+  },
+  "LanguageName": "Turkish(TR)",
+  "LanguageCode": "tr-TR     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f153a"
+  },
+  "LanguageName": "Turkmen(TM)",
+  "LanguageCode": "tk-TM     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f153b"
+  },
+  "LanguageName": "Ukrainian(UA)",
+  "LanguageCode": "uk-UA     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f153c"
+  },
+  "LanguageName": "Upper Sorbian(DE)",
+  "LanguageCode": "hsb-DE    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f153d"
+  },
+  "LanguageName": "Urdu(PK)",
+  "LanguageCode": "ur-PK     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f153e"
+  },
+  "LanguageName": "Uyghur(CN)",
+  "LanguageCode": "ug-CN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f153f"
+  },
+  "LanguageName": "Uzbek(UZ)",
+  "LanguageCode": "uz-Cyrl-UZ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1540"
+  },
+  "LanguageName": "Uzbek(UZ)",
+  "LanguageCode": "uz-Latn-UZ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1541"
+  },
+  "LanguageName": "Vietnamese(VN)",
+  "LanguageCode": "vi-VN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1542"
+  },
+  "LanguageName": "Welsh(GB)",
+  "LanguageCode": "cy-GB     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1543"
+  },
+  "LanguageName": "Wolof(SN)",
+  "LanguageCode": "wo-SN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1544"
+  },
+  "LanguageName": "Yakut(RU)",
+  "LanguageCode": "sah-RU    ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1545"
+  },
+  "LanguageName": "Yi(CN)",
+  "LanguageCode": "ii-CN     ",
+  "IsSupported": false
+},{
+  "_id": {
+    "$oid": "614fb98fa01c609acb0f1546"
+  },
+  "LanguageName": "Yoruba(NG)",
+  "LanguageCode": "yo-NG     ",
+  "IsSupported": false
+}]

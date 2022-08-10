@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "62dd68fda135ee4e04dd3a34"
+  },
+  "accountType": {
+    "$oid": "62d2b1f78aa7bd5c72f22890"
+  },
+  "userID": {
+    "$oid": "616ed673a2715bdff76ffa15"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dd6da7a135ee4e04dd3a3f"
+  },
+  "accountType": {
+    "$oid": "62d2b0b38aa7bd5c72f2288f"
+  },
+  "userID": {
+    "$oid": "62dd6da7a135ee4e04dd3a3c"
+  },
+  "__v": 0
+}]

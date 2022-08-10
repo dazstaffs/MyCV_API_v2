@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f15fd"
+  },
+  "SalaryBand": "0 - 5000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f15fe"
+  },
+  "SalaryBand": "5000 - 10000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f15ff"
+  },
+  "SalaryBand": "10000 - 20000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1600"
+  },
+  "SalaryBand": "20000 - 30000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1601"
+  },
+  "SalaryBand": "30000 - 40000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1602"
+  },
+  "SalaryBand": "40000 - 50000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1603"
+  },
+  "SalaryBand": "50000 - 60000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1604"
+  },
+  "SalaryBand": "60000 - 70000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1605"
+  },
+  "SalaryBand": "70000 - 80000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1606"
+  },
+  "SalaryBand": "80000 - 90000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1607"
+  },
+  "SalaryBand": "90000 - 100000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1608"
+  },
+  "SalaryBand": "100000 - 120000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f1609"
+  },
+  "SalaryBand": "120000 - 130000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f160a"
+  },
+  "SalaryBand": "130000 - 140000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f160b"
+  },
+  "SalaryBand": "140000 - 150000"
+},{
+  "_id": {
+    "$oid": "614fbc54a01c609acb0f160c"
+  },
+  "SalaryBand": "150000+"
+}]

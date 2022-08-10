@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15b6"
+  },
+  "EducationLevel": "A Level"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15b7"
+  },
+  "EducationLevel": "GCSE"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15b8"
+  },
+  "EducationLevel": "AS Level"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15b9"
+  },
+  "EducationLevel": "Degree"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15ba"
+  },
+  "EducationLevel": "Masters"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15bb"
+  },
+  "EducationLevel": "CSE"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15bc"
+  },
+  "EducationLevel": "O Level"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15bd"
+  },
+  "EducationLevel": "HND"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15be"
+  },
+  "EducationLevel": "NVQ"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15bf"
+  },
+  "EducationLevel": "BTEC Diplomas and Certificates"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15c0"
+  },
+  "EducationLevel": "Other"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15c1"
+  },
+  "EducationLevel": "GNVQ"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15c2"
+  },
+  "EducationLevel": "OCR National"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15c3"
+  },
+  "EducationLevel": "City and Guilds"
+},{
+  "_id": {
+    "$oid": "614fbba6a01c609acb0f15c4"
+  },
+  "EducationLevel": "Diploma"
+}]

@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "62e83992f7e742619e5cfc65"
+  },
+  "name": "layout-1",
+  "premium": true,
+  "html": "<section style=\"display: flex;\" class=\"cvTemplate\"><div style='flex-grow: 1;'></div><div style='flex-grow: 2;'></div><section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839bdf7e742619e5cfc66"
+  },
+  "name": "layout-2",
+  "premium": true,
+  "html": "<section style=\"display: flex; flex-flow: row wrap;\" class=\"cvTemplate\"><div style=\"flex-grow: 2;\"></div><div style=\"flex-grow: 1;\"></div></section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839c5f7e742619e5cfc67"
+  },
+  "name": "layout-2",
+  "premium": true,
+  "html": "<section style=\"display: flex; flex-flow: row wrap;\" class=\"cvTemplate\"><div style='flex: 1 100%; height: 35px;'></div><div style='flex: 1 auto; height: 145px;'></div><div style='flex: 2 auto; height: 145px;'></div></section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839cef7e742619e5cfc68"
+  },
+  "name": "layout-4",
+  "premium": true,
+  "html": "<section style=\"display: flex; flex-flow: row wrap;\" class=\"cvTemplate\"><div style='flex: 1 100%; height: 35px;'></div><div style='flex: 2 auto; height: 145px;'></div><div style='flex: 1 auto; height: 145px;'></div></section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839d6f7e742619e5cfc69"
+  },
+  "name": "layout-5",
+  "premium": false,
+  "html": "<section style=\"display: flex; flex-flow: row wrap;\" class=\"cvTemplate\"><div style='flex: 1 100%; height: 35px;'></div><div style='flex: 1 auto; height: 145px;'></div><div style='flex: 1 auto; height: 145px;'></div></section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839dcf7e742619e5cfc6a"
+  },
+  "name": "layout-6",
+  "premium": true,
+  "html": "<section style=\"display: flex; flex-flow: row wrap;\" class=\"cvTemplate\"><div style=\"flex: 1 100%;\"></div><div style=\"flex: 1 100%;\"></div><div style=\"flex: 1 100%;\"></div></section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839e4f7e742619e5cfc6b"
+  },
+  "name": "layout-7",
+  "premium": false,
+  "html": "<section style=\"display: flex; flex-flow: row wrap;\" class=\"cvTemplate\"><div style=\"flex: 1 100%;\"></div><div style=\"flex: 1 auto;\"></div><div style=\"flex: 1 auto;\"></div><div style=\"flex: 1 100%;\"></div></section>",
+  "enabled": true
+},{
+  "_id": {
+    "$oid": "62e839ebf7e742619e5cfc6c"
+  },
+  "name": "layout-8",
+  "premium": false,
+  "html": "<section style=\"display: flex;\" class=\"cvTemplate\"><div style=\"flex-grow: 1;\"></div></section>",
+  "enabled": true
+}]

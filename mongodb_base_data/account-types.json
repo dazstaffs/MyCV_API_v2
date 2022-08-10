@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "62d2b0b38aa7bd5c72f2288f"
+  },
+  "accountTypeName": "Standard",
+  "accountTypeDesc": "The standard package is our default package and is adequate for most needs.",
+  "price": "Free",
+  "included": [
+    "Create a professional looking CV",
+    "Choose from 5 styles",
+    "Choose from 3 fonts",
+    "Choose from 3 layouts"
+  ],
+  "tier": "T1",
+  "active": true
+},{
+  "_id": {
+    "$oid": "62d2b1f78aa7bd5c72f22890"
+  },
+  "accountTypeName": "Premium",
+  "accountTypeDesc": "The premium subscription is for the serious CV writer who wants to customise their CVs for each application.",
+  "price": "7.99/mo",
+  "included": [
+    "Create up to 5 CVs",
+    "Choose from 50 styles",
+    "Choose froom 50 fonts",
+    "Choose from 8 layouts"
+  ],
+  "tier": "T1",
+  "active": true
+},{
+  "_id": {
+    "$oid": "62d86b4f6fb77673f0b43f73"
+  },
+  "accountTypeName": "Recruiter",
+  "accountTypeDesc": "The Recruiter subscription allows recruiters to view a limited amount of CV, make a limited amount of listings and edit a limit amount of CVs.",
+  "price": "27.99/mo",
+  "included": [
+    "View up to 50 CVs",
+    "Make up to 5 Job Listings",
+    "Edit up to 5 CVs"
+  ],
+  "tier": "T2",
+  "active": true
+}]
