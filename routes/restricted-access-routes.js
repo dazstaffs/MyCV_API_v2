@@ -39,9 +39,9 @@ module.exports = function (app) {
   );
 
   app.get(
-    "/api/get-cv-layouts",
+    "/api/get-user-cv-layouts",
     [authController.verifyToken],
-    cvLayoutController.getAllCVLayouts
+    cvLayoutController.getUserCVLayouts
   );
 
   //Posts
