@@ -19,7 +19,6 @@ exports.getCVLayout = (req, res) => {
 };
 
 exports.getAllCVLayouts = (req, res) => {
-  console.log("Getting all layouts");
   CVLayout.find(function (err, layout) {
     if (err) {
       res.json({

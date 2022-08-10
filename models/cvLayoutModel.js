@@ -13,6 +13,9 @@ var schema = mongoose.Schema({
   html: {
     type: String,
   },
+  enabled: {
+    type: Boolean,
+  },
 });
 
 var UserAccountType = (module.exports = mongoose.model("cv-layout", schema));
