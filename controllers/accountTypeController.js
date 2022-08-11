@@ -30,7 +30,15 @@ exports.updateUserAccountType = function (req, res) {
         { userID: userID },
         function (err, userAccountType) {
           if (err) res.send(err);
+
+          let renewalDate = null;
+          if (req.body.type == "Premium") {
+            let date = new Date();
+            renewalDate = new Date(date.setMonth(date.getMonth() + 1));
+          }
+
           userAccountType.accountType = accType._id;
+          userAccountType.renewalDate = renewalDate;
           userAccountType.save(function (err) {
             if (err) res.json(err);
             res.json({
@@ -64,7 +72,10 @@ exports.getUserAccountType = function (req, res) {
           res.json({
             status: "success",
             message: "user account retrieved",
-            data: accType.accountTypeName,
+            data: {
+              accountTypeName: accType.accountTypeName,
+              renewalDate: userAccType.renewalDate,
+            },
           });
         }
       });

@@ -7,6 +7,10 @@ var schema = mongoose.Schema({
   userID: {
     type: mongoose.Schema.Types.ObjectId,
   },
+  renewalDate: {
+    type: mongoose.Schema.Types.Date,
+    required: false,
+  },
 });
 
 var UserAccountType = (module.exports = mongoose.model("user-type", schema));
