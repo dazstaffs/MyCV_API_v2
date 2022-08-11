@@ -11,6 +11,10 @@ var schema = mongoose.Schema({
     type: mongoose.Schema.Types.Date,
     required: false,
   },
+  renew: {
+    type: mongoose.Schema.Types.Boolean,
+    required: false,
+  },
 });
 
 var UserAccountType = (module.exports = mongoose.model("user-type", schema));

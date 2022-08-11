@@ -31,14 +31,21 @@ exports.updateUserAccountType = function (req, res) {
         function (err, userAccountType) {
           if (err) res.send(err);
 
-          let renewalDate = null;
-          if (req.body.type == "Premium") {
-            let date = new Date();
-            renewalDate = new Date(date.setMonth(date.getMonth() + 1));
+          if (req.body.type == "Standard") {
+            //When renewals are processed, set accType._id.
+            userAccountType.renew = false;
           }
 
-          userAccountType.accountType = accType._id;
-          userAccountType.renewalDate = renewalDate;
+          if (req.body.type == "Premium") {
+            //When renewals are processed, take money, set new renewal date
+            userAccountType.accountType = accType._id;
+            let date = new Date();
+            userAccountType.renewalDate = new Date(
+              date.setMonth(date.getMonth() + 1)
+            );
+            userAccountType.renew = true;
+          }
+
           userAccountType.save(function (err) {
             if (err) res.json(err);
             res.json({
@@ -75,6 +82,7 @@ exports.getUserAccountType = function (req, res) {
             data: {
               accountTypeName: accType.accountTypeName,
               renewalDate: userAccType.renewalDate,
+              renew: userAccType.renew,
             },
           });
         }
