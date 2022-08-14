@@ -69,6 +69,12 @@ module.exports = function (app) {
   );
 
   app.post(
+    "/api/continue-subscription",
+    [authController.verifyToken],
+    accountTypeController.continueUserAccountSubscription
+  );
+
+  app.post(
     "/api/get-cv-layout",
     [authController.verifyToken],
     cvLayoutController.getCVLayout
