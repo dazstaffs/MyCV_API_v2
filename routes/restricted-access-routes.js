@@ -3,6 +3,7 @@ const cvController = require("../controllers/cvController");
 const userController = require("../controllers/userController");
 const accountTypeController = require("../controllers/accountTypeController");
 const cvLayoutController = require("../controllers/cvLayoutController");
+const emailController = require("../controllers/emailController");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -60,6 +61,12 @@ module.exports = function (app) {
     "/api/update-cv",
     [authController.verifyToken],
     cvController.updateCV
+  );
+
+  app.post(
+    "/api/sendDeleteAccountEmail",
+    [authController.verifyToken],
+    emailController.sendDeleteAccountEmail
   );
 
   app.post(
