@@ -25,13 +25,24 @@ auth = function (req, res) {
       });
     }
 
-    var token = jwt.sign({ id: user._id }, config.secret, {
-      expiresIn: 86400, //24 hours
-    });
+    //if user request account deletion, cancel it.
+    UserAccountType.findOne(
+      { userID: user._id },
+      function (err, userAccountType) {
+        if (err) res.send(err);
+        userAccountType.deleteAccountOn = null;
+        userAccountType.save(function (err) {
+          if (err) res.json(err);
+          var token = jwt.sign({ id: user._id }, config.secret, {
+            expiresIn: 86400, //24 hours
+          });
 
-    res.status(200).send({
-      accessToken: token,
-    });
+          res.status(200).send({
+            accessToken: token,
+          });
+        });
+      }
+    );
   });
 };
 

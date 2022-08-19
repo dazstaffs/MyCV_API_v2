@@ -111,3 +111,23 @@ exports.getUserAccountType = function (req, res) {
     }
   });
 };
+
+exports.confirmAccountDelete = (req, res) => {
+  let userID = authService.getUserID(req);
+  UserAccountType.findOne({ userID: userID }, function (err, userAccountType) {
+    if (err) res.send(err);
+    userAccountType.renew = false;
+    let date = new Date();
+    userAccountType.deleteAccountOn = new Date(
+      date.setMonth(date.getMonth() + 1)
+    );
+
+    userAccountType.save(function (err) {
+      if (err) res.json(err);
+
+      res.json({
+        message: "OK",
+      });
+    });
+  });
+};

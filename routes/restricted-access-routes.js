@@ -108,4 +108,10 @@ module.exports = function (app) {
     [authController.verifyToken],
     userController.updateUser
   );
+
+  app.post(
+    "/api/delete-account-confirm",
+    [authController.verifyToken],
+    accountTypeController.confirmAccountDelete
+  );
 };
