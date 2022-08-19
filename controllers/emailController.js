@@ -18,10 +18,8 @@ getTestAccount = async () => {
   return transporter;
 };
 
-sendEmail = async (req, res, emailAddress, subject, html) => {
+sendEmail = async (emailAddress, subject, html) => {
   let transporter = await getTestAccount();
-
-  // send mail with defined transport object
   let info = await transporter
     .sendMail({
       from: '"My Admin" <admin@mycv.com>',
@@ -30,9 +28,7 @@ sendEmail = async (req, res, emailAddress, subject, html) => {
       html: html,
     })
     .catch((err) => {
-      return res
-        .status(500)
-        .send({ message: "Unable to send email. Server error." });
+      throw err;
     });
   return info;
 };
@@ -70,13 +66,7 @@ exports.sendPasswordResetEmail = async (req, res) => {
       "Please click on this link to be redirected to do your password reset:" +
       `<a href='http://localhost:4200/welcome/set-password/${token}'>Reset Password</a></p>`;
     let subject = "We have received your request...";
-    let sendEmailResult = await sendEmail(
-      req,
-      res,
-      emailAddress,
-      subject,
-      html
-    );
+    let sendEmailResult = await sendEmail(emailAddress, subject, html);
 
     consoleLogResult(sendEmailResult);
 
@@ -106,18 +96,35 @@ exports.sendDeleteAccountEmail = async (req, res) => {
       `<a href='http://localhost:4200/manage/delete-account/${token}'>Confirm Account Deletion</a></p>`;
 
     let subject = "Confirm MY CV Account Deletion";
-    let sendEmailResult = await sendEmail(
-      req,
-      res,
-      emailAddress,
-      subject,
-      html
-    );
+    let sendEmailResult = await sendEmail(emailAddress, subject, html);
 
     consoleLogResult(sendEmailResult);
 
     return res.status(200).send({
       message: `Delete Account Email Sent. Reference: ${sendEmailResult.messageId}`,
     });
+  });
+};
+
+exports.sendPasswordChangeConfirmEmail = async (userID) => {
+  User.findOne({ _id: userID }).exec(async (err, user) => {
+    if (err) {
+      throw err;
+    }
+
+    if (!user) {
+      throw err;
+    }
+
+    let emailAddress = user.EmailAddress;
+    let html =
+      `<p>Dear ${user.FirstName}</p><p>We are emailing to confirm that you changed your My CV password. If this was not you, we would advise you change your password ASAP using this link: ` +
+      `<a href='http://localhost:4200/welcome/reset-password'>Change Password</a></p>`;
+
+    let subject = "My CV - Your Password Has Been Changed";
+    let sendEmailResult = await sendEmail(emailAddress, subject, html);
+
+    consoleLogResult(sendEmailResult);
+    return;
   });
 };

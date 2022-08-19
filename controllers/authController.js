@@ -2,6 +2,7 @@ let jwt = require("jsonwebtoken");
 User = require("../models/userModel");
 var bcrypt = require("bcryptjs");
 const config = require("../config/auth.config");
+const emailController = require("../controllers/emailController");
 
 auth = function (req, res) {
   const email = req.body.email,
@@ -60,7 +61,7 @@ verifyToken = (req, res, next) => {
   });
 };
 
-setPassword = (req, res) => {
+setPassword = async (req, res) => {
   let token = req.headers["x-access-token"];
   let userID = "";
   let newPassword = bcrypt.hashSync(req.body.newpassword, 8);
@@ -71,8 +72,9 @@ setPassword = (req, res) => {
   User.findById(userID, function (err, user) {
     if (err) res.send(err);
     user.Password = newPassword;
-    user.save(function (err) {
+    user.save(async function (err) {
       if (err) res.json(err);
+      await emailController.sendPasswordChangeConfirmEmail(userID);
       res.json({
         message: "Password Reset",
       });
