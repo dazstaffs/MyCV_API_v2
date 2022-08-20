@@ -8,9 +8,9 @@ var cvSchema = mongoose.Schema({
   createdDate: Date,
   lastEditedDate: Date,
   isFinished: Boolean,
-  employmentHistory: [Schema.Types.Mixed],
-  education: [Schema.Types.Mixed],
-  skills: [Schema.Types.Mixed],
+  employmentHistory: [],
+  education: [],
+  skills: [],
   hobbiesStatement: String,
 });
 
