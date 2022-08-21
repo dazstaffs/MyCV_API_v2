@@ -2,6 +2,7 @@
 AccountType = require("../models/accountTypeModel");
 UserAccountType = require("../models/userTypeModel");
 authService = require("../controllers/authController");
+emailService = require("../controllers/emailController");
 
 // Handle index actions
 exports.getAccountTypes = function (req, res) {
@@ -49,12 +50,13 @@ exports.updateUserAccountType = function (req, res) {
     (err, accType) => {
       UserAccountType.findOne(
         { userID: userID },
-        function (err, userAccountType) {
+        async function (err, userAccountType) {
           if (err) res.send(err);
 
           if (req.body.type == "Standard") {
             //When renewals are processed, set accType._id.
             userAccountType.renew = false;
+            await emailService.sendAccountDowngradeEmail(userID);
           }
 
           if (req.body.type == "Premium") {
@@ -65,6 +67,7 @@ exports.updateUserAccountType = function (req, res) {
               date.setMonth(date.getMonth() + 1)
             );
             userAccountType.renew = true;
+            await emailService.sendAccountUpgradeEmail(userID);
           }
 
           userAccountType.save(function (err) {

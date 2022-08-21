@@ -128,3 +128,57 @@ exports.sendPasswordChangeConfirmEmail = async (userID) => {
     return;
   });
 };
+
+exports.sendAccountUpgradeEmail = async (userID) => {
+  User.findOne({ _id: userID }).exec(async (err, user) => {
+    if (err) {
+      throw err;
+    }
+
+    if (!user) {
+      throw err;
+    }
+
+    let date = new Date();
+    let renewalDate = new Date(date.setMonth(date.getMonth() + 1));
+
+    let emailAddress = user.EmailAddress;
+    let html =
+      `<p>Dear ${user.FirstName}</p>` +
+      `<p>Thank you for upgrading to our Premium membership package. We hope you enjoy your new features. Your membership will auto-renew on the same day of each month, but you can cancel this at any time within the accounts page on the My CV website.</p>` +
+      `<p>Your next auto-renewal will be: ${renewalDate}</p>` +
+      "<p>Many Thanks</p>" +
+      "<p>The My CV Team</p>";
+
+    let subject = "My CV - Thank You For Upgrading";
+    let sendEmailResult = await sendEmail(emailAddress, subject, html);
+
+    consoleLogResult(sendEmailResult);
+    return;
+  });
+};
+
+exports.sendAccountDowngradeEmail = async (userID) => {
+  User.findOne({ _id: userID }).exec(async (err, user) => {
+    if (err) {
+      throw err;
+    }
+
+    if (!user) {
+      throw err;
+    }
+
+    let emailAddress = user.EmailAddress;
+    let html =
+      `<p>Dear ${user.FirstName}</p>` +
+      `<p>We are just emailing to confirm your account will be changed back to the Standard account package at your next auto-renewal. You can continue to enjoy your current benefits until that date. If you change your mind, you can continue your current membership package from within the accounts page on the My CV website.</p>` +
+      "<p>Many Thanks</p>" +
+      "<p>The My CV Team</p>";
+
+    let subject = "My CV - Your Account Type Change";
+    let sendEmailResult = await sendEmail(emailAddress, subject, html);
+
+    consoleLogResult(sendEmailResult);
+    return;
+  });
+};
