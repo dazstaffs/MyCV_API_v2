@@ -4,7 +4,7 @@ var bcrypt = require("bcryptjs");
 const config = require("../config/auth.config");
 const emailController = require("../controllers/emailController");
 
-auth = function (req, res) {
+exports.auth = function (req, res) {
   const email = req.body.email,
     password = req.body.password;
 
@@ -47,7 +47,7 @@ auth = function (req, res) {
   });
 };
 
-verifyToken = (req, res, next) => {
+exports.verifyToken = (req, res, next) => {
   let token = req.headers["x-access-token"];
   if (!token) {
     return res.status(403).send({ message: "No token provided" });
@@ -61,7 +61,7 @@ verifyToken = (req, res, next) => {
   });
 };
 
-setPassword = async (req, res) => {
+exports.setPassword = async (req, res) => {
   let token = req.headers["x-access-token"];
   let userID = "";
   let newPassword = bcrypt.hashSync(req.body.newpassword, 8);
@@ -82,11 +82,11 @@ setPassword = async (req, res) => {
   });
 };
 
-validToken = (req, res) => {
+exports.validToken = (req, res) => {
   return res.status(200).send({ message: "OK" });
 };
 
-getUserID = (req) => {
+exports.getUserID = (req) => {
   let token = req.headers["x-access-token"];
   let userID = "";
   jwt.verify(token, config.secret, (err, decoded) => {
@@ -94,13 +94,3 @@ getUserID = (req) => {
   });
   return userID;
 };
-
-const authJwt = {
-  auth,
-  verifyToken,
-  validToken,
-  setPassword,
-  getUserID,
-};
-
-module.exports = authJwt;

@@ -2,7 +2,7 @@ CV = require("../models/cvModel");
 authService = require("../controllers/authController");
 const mongoose = require("mongoose");
 
-addCV = (req, res) => {
+exports.addCV = (req, res) => {
   let cv = new CV();
   cv.userId = authService.getUserID(req);
   cv.cvName = req.body.cvName;
@@ -27,7 +27,7 @@ addCV = (req, res) => {
   });
 };
 
-updateCV = (req, res) => {
+exports.updateCV = (req, res) => {
   let userId = authService.getUserID(req);
   let cvID = req.body._id;
   CV.findOne({ UserId: userId, _id: cvID }).exec((err, cv) => {
@@ -62,7 +62,7 @@ updateCV = (req, res) => {
   });
 };
 
-getUserCVs = (req, res) => {
+exports.getUserCVs = (req, res) => {
   let userId = authService.getUserID(req);
   CV.find({ UserId: userId }).exec((err, cvs) => {
     if (err) {
@@ -79,7 +79,7 @@ getUserCVs = (req, res) => {
   });
 };
 
-copyUserCV = (req, res) => {
+exports.copyUserCV = (req, res) => {
   let userId = authService.getUserID(req);
   let cvID = req.body.cvID;
   CV.findOne({ UserId: userId, _id: cvID }).exec((err, cv) => {
@@ -112,7 +112,7 @@ copyUserCV = (req, res) => {
   });
 };
 
-deleteUserCV = (req, res) => {
+exports.deleteUserCV = (req, res) => {
   let userId = authService.getUserID(req);
   let cvID = req.body.cvID;
   CV.findOneAndDelete({ UserId: userId, _id: cvID }).exec((err, cv) => {
@@ -129,13 +129,3 @@ deleteUserCV = (req, res) => {
     }
   });
 };
-
-const methods = {
-  addCV,
-  getUserCVs,
-  copyUserCV,
-  deleteUserCV,
-  updateCV,
-};
-
-module.exports = methods;
