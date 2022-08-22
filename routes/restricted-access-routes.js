@@ -110,6 +110,12 @@ module.exports = function (app) {
   );
 
   app.post(
+    "/api/update-user-password",
+    [authController.verifyToken],
+    userController.updateUserPassword
+  );
+
+  app.post(
     "/api/delete-account-confirm",
     [authController.verifyToken],
     accountTypeController.confirmAccountDelete
