@@ -1,5 +1,6 @@
 let express = require("express");
 let mongoose = require("mongoose");
+const schedulerController = require("./controllers/scheduleController");
 
 let app = express();
 const cors = require("cors");
@@ -28,6 +29,8 @@ const options = {
 };
 
 app.use(cors(options));
+
+schedulerController.scheduledTask();
 
 //routes
 require("./routes/restricted-access-routes")(app);

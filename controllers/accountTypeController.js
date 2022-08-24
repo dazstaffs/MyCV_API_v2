@@ -134,3 +134,27 @@ exports.confirmAccountDelete = (req, res) => {
     });
   });
 };
+
+exports.getUsersForDowngrade = () => {
+  return new Promise((resolve, reject) => {
+    const startOfDay = new Date();
+    startOfDay.setUTCHours(0, 0, 0, 0);
+
+    const endOfDay = new Date();
+    endOfDay.setUTCHours(23, 59, 59, 999);
+
+    UserAccountType.find(
+      {
+        renewalDate: {
+          $gte: startOfDay,
+          $lt: endOfDay,
+        },
+        renew: false,
+      },
+      function (err, data) {
+        if (err) reject(err);
+        else resolve(data);
+      }
+    );
+  });
+};
