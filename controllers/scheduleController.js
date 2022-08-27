@@ -12,20 +12,18 @@ exports.scheduledTask = () => {
   const task = new AsyncTask(
     "simple task",
     () => {
-      return accountTypeController.getUsersForDowngrade().then((result) => {
-        /* continue the promise chain */
-        console.log(result);
-      });
+      return accountTypeController
+        .downgradeTodaysNonRenewals()
+        .then((result) => {
+          /* continue the promise chain */
+          console.log(result);
+        });
     },
     (err) => {
       /* handle error here */
       console.log(err);
     }
   );
-  const job = new SimpleIntervalJob({ seconds: 10 }, task);
-
+  const job = new SimpleIntervalJob({ hours: 2 }, task);
   scheduler.addSimpleIntervalJob(job);
-
-  // when stopping your app
-  //scheduler.start();
 };
