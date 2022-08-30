@@ -99,3 +99,22 @@ exports.setCVLayout = (req, res) => {
     }
   );
 };
+
+exports.deleteLayoutsByCVID = (userCVIdsForDeletion) => {
+  return new Promise((resolve, reject) => {
+    let array = userCVIdsForDeletion.map((objectID) => {
+      return objectID["_id"];
+    });
+    console.log(array);
+    UserCVLayout.deleteMany({
+      cvID: {
+        $in: array,
+      },
+    }).exec((err, confirmation) => {
+      if (err) reject(err);
+      else {
+        resolve(confirmation);
+      }
+    });
+  });
+};

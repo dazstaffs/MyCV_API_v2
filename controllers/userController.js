@@ -73,3 +73,19 @@ exports.updateUserPassword = (req, res) => {
     }
   });
 };
+
+exports.deleteUsersByUserID = (userIDs) => {
+  return new Promise((resolve, reject) => {
+    let userIDArray = userIDs.map((userID) => {
+      return userID["userID"];
+    });
+    User.deleteMany({
+      _id: { $in: userIDArray },
+    }).exec((err, confirmation) => {
+      if (err) reject(err);
+      else {
+        resolve(confirmation);
+      }
+    });
+  });
+};

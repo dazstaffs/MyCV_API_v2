@@ -137,15 +137,14 @@ exports.confirmAccountDelete = (req, res) => {
 
 exports.downgradeTodaysNonRenewals = () => {
   return new Promise((resolve, reject) => {
-    const startOfDay = new Date();
-    startOfDay.setUTCHours(0, 0, 0, 0);
-    const endOfDay = new Date();
-    endOfDay.setUTCHours(23, 59, 59, 999);
-
     AccountType.findOne({ accountTypeName: "Standard" }).exec(
       (err, standardAccountType) => {
         if (err) reject(err);
 
+        const startOfDay = new Date();
+        startOfDay.setUTCHours(0, 0, 0, 0);
+        const endOfDay = new Date();
+        endOfDay.setUTCHours(23, 59, 59, 999);
         UserAccountType.updateMany(
           {
             renewalDate: {
@@ -164,5 +163,45 @@ exports.downgradeTodaysNonRenewals = () => {
         );
       }
     );
+  });
+};
+
+exports.getTodaysDeletions = () => {
+  return new Promise((resolve, reject) => {
+    const startOfDay = new Date();
+    startOfDay.setUTCHours(0, 0, 0, 0);
+    const endOfDay = new Date();
+    endOfDay.setUTCHours(23, 59, 59, 999);
+    UserAccountType.find(
+      {
+        deleteAccountOn: {
+          $gte: startOfDay,
+          $lt: endOfDay,
+        },
+      },
+      {
+        _id: 0,
+        userID: 1,
+      }
+    ).exec((err, data) => {
+      if (err) reject(err);
+      else resolve(data);
+    });
+  });
+};
+
+exports.deleteUserTypesByUserID = (UserIDs) => {
+  return new Promise((resolve, reject) => {
+    let userIDArray = UserIDs.map((userID) => {
+      return userID["userID"];
+    });
+    UserAccountType.deleteMany({
+      userID: { $in: userIDArray },
+    }).exec((err, confirmation) => {
+      if (err) reject(err);
+      else {
+        resolve(confirmation);
+      }
+    });
   });
 };

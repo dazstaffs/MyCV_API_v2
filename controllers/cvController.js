@@ -1,5 +1,6 @@
 CV = require("../models/cvModel");
 authService = require("../controllers/authController");
+const e = require("cors");
 const mongoose = require("mongoose");
 
 exports.addCV = (req, res) => {
@@ -75,6 +76,49 @@ exports.getUserCVs = (req, res) => {
       status: "success",
       message: "CVs retrieved",
       data: cvs,
+    });
+  });
+};
+
+exports.getUserCVIDsForDeletion = (userIDs) => {
+  var userIDArray = userIDs.map(function (item) {
+    return item["userID"];
+  });
+  return new Promise((resolve, reject) => {
+    CV.find(
+      {
+        userId: {
+          $in: userIDArray,
+        },
+      },
+      {
+        _id: 1,
+      }
+    ).exec((err, docs) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(docs);
+      }
+    });
+  });
+};
+
+exports.deleteUserCVsByID = (CVIDs) => {
+  return new Promise((resolve, reject) => {
+    var CVIDArray = CVIDs.map(function (item) {
+      return item["_id"];
+    });
+    CV.deleteMany({
+      _id: {
+        $in: CVIDArray,
+      },
+    }).exec((err, docs) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(docs);
+      }
     });
   });
 };
