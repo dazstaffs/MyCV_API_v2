@@ -91,7 +91,7 @@ exports.scheduledTask = () => {
   );
 
   const processMonthlyRenewalsJob = new SimpleIntervalJob(
-    { seconds: 10 },
+    { hours: 2 }, //set to 2 hours in case the first job fails.
     processMonthlyRenewalsTask
   );
 
