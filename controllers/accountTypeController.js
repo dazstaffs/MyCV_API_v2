@@ -190,6 +190,33 @@ exports.getTodaysDeletions = () => {
   });
 };
 
+exports.getTodaysRenewals = () => {
+  return new Promise((resolve, reject) => {
+    const startOfDay = new Date();
+    startOfDay.setUTCHours(0, 0, 0, 0);
+    const endOfDay = new Date();
+    endOfDay.setUTCHours(23, 59, 59, 999);
+    UserAccountType.find(
+      {
+        renewalDate: {
+          $gte: startOfDay,
+          $lt: endOfDay,
+        },
+        renew: true,
+      },
+      {
+        _id: 0,
+        userID: 1,
+      }
+    ).exec((err, users) => {
+      if (err) reject(err);
+      else {
+        resolve(users);
+      }
+    });
+  });
+};
+
 exports.deleteUserTypesByUserID = (UserIDs) => {
   return new Promise((resolve, reject) => {
     let userIDArray = UserIDs.map((userID) => {
@@ -198,6 +225,29 @@ exports.deleteUserTypesByUserID = (UserIDs) => {
     UserAccountType.deleteMany({
       userID: { $in: userIDArray },
     }).exec((err, confirmation) => {
+      if (err) reject(err);
+      else {
+        resolve(confirmation);
+      }
+    });
+  });
+};
+
+exports.renewMonthlyUsers = (UserIDs) => {
+  return new Promise((resolve, reject) => {
+    let userIDArray = UserIDs.map((userID) => {
+      return userID["userID"];
+    });
+    let date = new Date();
+    let renewalDate = date.setMonth(date.getMonth() + 1);
+    UserAccountType.updateMany(
+      {
+        userID: { $in: userIDArray },
+      },
+      {
+        $set: { renewalDate: renewalDate },
+      }
+    ).exec((err, confirmation) => {
       if (err) reject(err);
       else {
         resolve(confirmation);

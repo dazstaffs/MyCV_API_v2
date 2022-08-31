@@ -13,7 +13,7 @@ exports.scheduledTask = () => {
   const scheduler = new ToadScheduler();
 
   //Create Tasks
-  const downgradeNonRenewers = new AsyncTask(
+  const downgradeNonRenewersTask = new AsyncTask(
     "downgrade non-renewers to standard accounts",
     () => {
       return accountTypeController
@@ -28,7 +28,7 @@ exports.scheduledTask = () => {
   );
 
   const deleteUserAccountsTask = new AsyncTask(
-    "downgrade non-renewers to standard accounts",
+    "delete the users requesting a deletion",
     async () => {
       let userIDsForDeletion = await accountTypeController
         .getTodaysDeletions()
@@ -61,10 +61,28 @@ exports.scheduledTask = () => {
     }
   );
 
+  const processMonthlyRenewalsTask = new AsyncTask(
+    "take the money and update the renewal date",
+    async () => {
+      //Get people to take money from
+      let todaysRenewalUserIDs = await accountTypeController
+        .getTodaysRenewals()
+        .then((result) => result);
+
+      //Upon success of taking money, set new renewal date
+      await accountTypeController
+        .renewMonthlyUsers(todaysRenewalUserIDs)
+        .then((result) => console.log(result));
+    },
+    (err) => {
+      console.log(err);
+    }
+  );
+
   //Create Jobs
   const downgradeNonRenewersJob = new SimpleIntervalJob(
     { hours: 2 }, //set to 2 hours in case the first job fails.
-    downgradeNonRenewers
+    downgradeNonRenewersTask
   );
 
   const deleteUserAccountsJob = new SimpleIntervalJob(
@@ -72,7 +90,13 @@ exports.scheduledTask = () => {
     deleteUserAccountsTask
   );
 
+  const processMonthlyRenewalsJob = new SimpleIntervalJob(
+    { seconds: 10 },
+    processMonthlyRenewalsTask
+  );
+
   //Add Jobs to Rescheduler
   scheduler.addSimpleIntervalJob(downgradeNonRenewersJob);
   scheduler.addSimpleIntervalJob(deleteUserAccountsJob);
+  scheduler.addSimpleIntervalJob(processMonthlyRenewalsJob);
 };
