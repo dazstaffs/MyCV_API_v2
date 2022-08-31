@@ -20,6 +20,51 @@ exports.getCVLayout = (req, res) => {
   });
 };
 
+exports.getPremiumCVLayouts = () => {
+  return new Promise((resolve, reject) => {
+    CVLayout.find(
+      {
+        premium: true,
+      },
+      {
+        _id: 1,
+      }
+    ).exec((err, premiumTemplates) => {
+      if (err) reject(err);
+      else {
+        resolve(premiumTemplates);
+      }
+    });
+  });
+};
+
+exports.downgradePremiumToStandardTemplates = (cvIDs, premiumLayoutIDs) => {
+  console.log(cvIDs);
+  console.log(premiumLayoutIDs);
+  return new Promise((resolve, reject) => {
+    let cvSimpleArray = cvIDs.map((cvIDS) => {
+      return cvIDS["_id"];
+    });
+    let premiumLayoutsArray = premiumLayoutIDs.map((premiumLayouts) => {
+      return premiumLayouts["_id"];
+    });
+    UserCVLayout.updateMany(
+      {
+        cvID: { $in: cvSimpleArray },
+        layoutID: { $in: premiumLayoutsArray },
+      },
+      {
+        $set: { layoutID: "" },
+      }
+    ).exec((err, result) => {
+      if (err) reject(err);
+      else {
+        resolve(result);
+      }
+    });
+  });
+};
+
 exports.getUserCVLayouts = (req, res) => {
   let userId = authService.getUserID(req);
   UserAccountType.findOne({ userID: userId }).exec((err, userAccType) => {

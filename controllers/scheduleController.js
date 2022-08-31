@@ -15,12 +15,30 @@ exports.scheduledTask = () => {
   //Create Tasks
   const downgradeNonRenewersTask = new AsyncTask(
     "downgrade non-renewers to standard accounts",
-    () => {
-      return accountTypeController
-        .downgradeTodaysNonRenewals()
-        .then((result) => {
+    async () => {
+      let userIDsForDowngrade = await accountTypeController
+        .getTodaysNonRenewals()
+        .then((users) => users);
+      let cvIDsForLayoutChange = await cvController
+        .getUserCVsByUserIDs(userIDsForDowngrade)
+        .then((cvs) => cvs);
+      let premiumCVLayouts = await cvLayoutController
+        .getPremiumCVLayouts()
+        .then((layouts) => layouts);
+
+      let downgradeUserCVLayoutPromise =
+        cvLayoutController.downgradePremiumToStandardTemplates(
+          cvIDsForLayoutChange,
+          premiumCVLayouts
+        );
+      let downgradeUserPromise =
+        accountTypeController.downgradeTodaysNonRenewals(userIDsForDowngrade);
+
+      Promise.all([downgradeUserCVLayoutPromise, downgradeUserPromise]).then(
+        (result) => {
           console.log(result);
-        });
+        }
+      );
     },
     (err) => {
       console.log(err);
@@ -35,7 +53,7 @@ exports.scheduledTask = () => {
         .then((result) => result);
 
       let userCVIdsForDeletion = await cvController
-        .getUserCVIDsForDeletion(userIDsForDeletion)
+        .getUserCVsByUserIDs(userIDsForDeletion)
         .then((userCVIDs) => userCVIDs);
 
       let deleteCVLayoutsPromise =
@@ -81,7 +99,7 @@ exports.scheduledTask = () => {
 
   //Create Jobs
   const downgradeNonRenewersJob = new SimpleIntervalJob(
-    { hours: 2 }, //set to 2 hours in case the first job fails.
+    { seconds: 10 }, //set to 2 hours in case the first job fails.
     downgradeNonRenewersTask
   );
 

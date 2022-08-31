@@ -135,32 +135,50 @@ exports.confirmAccountDelete = (req, res) => {
   });
 };
 
-exports.downgradeTodaysNonRenewals = () => {
+exports.getTodaysNonRenewals = () => {
   return new Promise((resolve, reject) => {
+    const startOfDay = new Date();
+    startOfDay.setUTCHours(0, 0, 0, 0);
+    const endOfDay = new Date();
+    endOfDay.setUTCHours(23, 59, 59, 999);
+    UserAccountType.find(
+      {
+        renewalDate: {
+          $gte: startOfDay,
+          $lt: endOfDay,
+        },
+        renew: false,
+      },
+      {
+        _id: 0,
+        userID: 1,
+      }
+    ).exec((err, data) => {
+      if (err) reject(err);
+      else resolve(data);
+    });
+  });
+};
+
+exports.downgradeTodaysNonRenewals = (userIDs) => {
+  return new Promise((resolve, reject) => {
+    let userIDArray = userIDs.map((user) => {
+      return user["userID"];
+    });
     AccountType.findOne({ accountTypeName: "Standard" }).exec(
       (err, standardAccountType) => {
         if (err) reject(err);
-
-        const startOfDay = new Date();
-        startOfDay.setUTCHours(0, 0, 0, 0);
-        const endOfDay = new Date();
-        endOfDay.setUTCHours(23, 59, 59, 999);
         UserAccountType.updateMany(
           {
-            renewalDate: {
-              $gte: startOfDay,
-              $lt: endOfDay,
-            },
-            renew: false,
+            userID: { $in: userIDArray },
           },
           {
             $set: { accountType: standardAccountType._id },
-          },
-          function (err, data) {
-            if (err) reject(err);
-            else resolve(data);
           }
-        );
+        ).exec((err, data) => {
+          if (err) reject(err);
+          else resolve(data);
+        });
       }
     );
   });

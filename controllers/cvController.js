@@ -80,7 +80,7 @@ exports.getUserCVs = (req, res) => {
   });
 };
 
-exports.getUserCVIDsForDeletion = (userIDs) => {
+exports.getUserCVsByUserIDs = (userIDs) => {
   var userIDArray = userIDs.map(function (item) {
     return item["userID"];
   });
