@@ -39,27 +39,46 @@ exports.getPremiumCVLayouts = () => {
 };
 
 exports.downgradePremiumToStandardTemplates = (cvIDs, premiumLayoutIDs) => {
-  console.log(cvIDs);
-  console.log(premiumLayoutIDs);
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     let cvSimpleArray = cvIDs.map((cvIDS) => {
       return cvIDS["_id"];
     });
     let premiumLayoutsArray = premiumLayoutIDs.map((premiumLayouts) => {
       return premiumLayouts["_id"];
     });
+    let defaultTemplate = await getDefaultStandardTemplate().then(
+      (template) => template
+    );
     UserCVLayout.updateMany(
       {
         cvID: { $in: cvSimpleArray },
         layoutID: { $in: premiumLayoutsArray },
       },
       {
-        $set: { layoutID: "" },
+        $set: { layoutID: defaultTemplate },
       }
     ).exec((err, result) => {
       if (err) reject(err);
       else {
         resolve(result);
+      }
+    });
+  });
+};
+
+getDefaultStandardTemplate = () => {
+  return new Promise((resolve, reject) => {
+    CVLayout.findOne(
+      {
+        default: true,
+      },
+      {
+        _id: 1,
+      }
+    ).exec((err, layout) => {
+      if (err) reject(err);
+      else {
+        resolve(layout);
       }
     });
   });
