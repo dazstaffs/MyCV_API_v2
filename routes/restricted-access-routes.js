@@ -47,11 +47,6 @@ module.exports = function (app) {
 
   //Posts
   app.post(
-    "/api/sessionValid",
-    [authController.verifyToken],
-    authController.validToken
-  );
-  app.post(
     "/api/set-password",
     [authController.verifyToken],
     authController.setPassword

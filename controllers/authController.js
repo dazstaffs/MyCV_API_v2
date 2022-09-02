@@ -82,10 +82,6 @@ exports.setPassword = async (req, res) => {
   });
 };
 
-exports.validToken = (req, res) => {
-  return res.status(200).send({ message: "OK" });
-};
-
 exports.getUserID = (req) => {
   let token = req.headers["x-access-token"];
   let userID = "";
