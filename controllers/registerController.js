@@ -3,6 +3,7 @@ const User = require("../models/userModel");
 var bcrypt = require("bcryptjs");
 const AccountType = require("../models/accountTypeModel");
 const UserType = require("../models/userTypeModel");
+const UserEmailConfirmation = require("../models/emailAddressConfirmationModel");
 
 checkDuplicateUsername = (req, res, next) => {
   UserCredential.findOne({
@@ -37,8 +38,24 @@ register = (req, res) => {
       res.status(500).send({ message: err });
     } else {
       setAccountType(user);
-      console.log("User Created");
+      setEmailAddressUnconfirmed(user);
       res.status(200).send({ message: "User Created" });
+    }
+  });
+};
+
+setEmailAddressUnconfirmed = (user) => {
+  const userEmailConfirmation = new UserEmailConfirmation({
+    userID: user._id,
+    emailConfirmed: false,
+  });
+
+  userEmailConfirmation.save((err, emailConfirmation) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      return;
     }
   });
 };
@@ -64,7 +81,6 @@ setAccountType = (user) => {
           console.log("Error");
           return;
         } else {
-          console.log("User Type Set");
           return;
         }
       });
