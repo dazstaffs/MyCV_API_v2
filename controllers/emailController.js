@@ -182,3 +182,27 @@ exports.sendAccountDowngradeEmail = async (userID) => {
     return;
   });
 };
+
+exports.sendEmailAddressConfirmationEmail = async (
+  emailConfirmationID,
+  emailAddress
+) => {
+  return new Promise(async (resolve, reject) => {
+    let token = jwt.sign(
+      {
+        emailConfirmationID: emailConfirmationID,
+      },
+      config.secret,
+      {
+        expiresIn: 1800, //30 mins in seconds
+      }
+    );
+    let subject = "My CV - Confirm Email Address";
+    let html =
+      "<p>Thank you for registering with My CV. Please confirm your email address using the following link:</p>" +
+      `<p><a href='http://localhost:4200/welcome/login?registerEmailAddress=${token}'>Confirm Email Address</a></p>`;
+    let sendEmailResult = await sendEmail(emailAddress, subject, html);
+    consoleLogResult(sendEmailResult);
+    resolve();
+  });
+};

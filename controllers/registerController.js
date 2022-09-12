@@ -4,8 +4,11 @@ var bcrypt = require("bcryptjs");
 const AccountType = require("../models/accountTypeModel");
 const UserType = require("../models/userTypeModel");
 const UserEmailConfirmation = require("../models/emailAddressConfirmationModel");
+const EmailController = require("./emailController");
+const config = require("../config/auth.config");
+let jwt = require("jsonwebtoken");
 
-checkDuplicateUsername = (req, res, next) => {
+exports.checkDuplicateUsername = (req, res, next) => {
   UserCredential.findOne({
     EmailAddress: req.body.emailAddress,
   }).exec((err, userCredential) => {
@@ -20,7 +23,7 @@ checkDuplicateUsername = (req, res, next) => {
   });
 };
 
-register = (req, res) => {
+exports.register = (req, res) => {
   const user = new User({
     FirstName: req.body.firstName,
     LastName: req.body.lastName,
@@ -32,30 +35,58 @@ register = (req, res) => {
     Password: bcrypt.hashSync(req.body.password, 8),
   });
 
-  user.save((err, user) => {
+  user.save(async (err, user) => {
     if (err) {
-      console.log("Error");
+      console.log(err);
       res.status(500).send({ message: err });
     } else {
       setAccountType(user);
-      setEmailAddressUnconfirmed(user);
+      let emailConf = await setEmailAddressUnconfirmed(user);
+      await EmailController.sendEmailAddressConfirmationEmail(
+        emailConf._id,
+        user.EmailAddress
+      );
       res.status(200).send({ message: "User Created" });
     }
   });
 };
 
 setEmailAddressUnconfirmed = (user) => {
-  const userEmailConfirmation = new UserEmailConfirmation({
-    userID: user._id,
-    emailConfirmed: false,
+  return new Promise((resolve, reject) => {
+    const userEmailConfirmation = new UserEmailConfirmation({
+      userID: user._id,
+      emailConfirmed: false,
+    });
+
+    userEmailConfirmation.save((err, emailConfirmation) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(emailConfirmation);
+      }
+    });
+  });
+};
+
+exports.setEmailAddressConfirmed = (req, res) => {
+  let emailConfID = "";
+  jwt.verify(req.body.token, config.secret, (err, decoded) => {
+    emailConfID =
+      decoded.emailConfirmationID == undefined
+        ? ""
+        : decoded.emailConfirmationID;
   });
 
-  userEmailConfirmation.save((err, emailConfirmation) => {
+  UserEmailConfirmation.updateOne(
+    { _id: emailConfID },
+    { $set: { emailConfirmed: true } }
+  ).exec((err, result) => {
     if (err) {
       console.log(err);
-      return;
+      res.status(500).send({ message: err });
     } else {
-      return;
+      console.log(result);
+      res.status(200).send({ message: "OK" });
     }
   });
 };
@@ -87,10 +118,3 @@ setAccountType = (user) => {
     }
   });
 };
-
-const registerController = {
-  checkDuplicateUsername,
-  register,
-};
-
-module.exports = registerController;

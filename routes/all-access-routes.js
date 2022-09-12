@@ -23,4 +23,8 @@ module.exports = function (app) {
     "/api/sendPasswordResetEmail",
     emailController.sendPasswordResetEmail
   );
+  app.post(
+    "/api/user-confirming-email-address",
+    registerController.setEmailAddressConfirmed
+  );
 };
