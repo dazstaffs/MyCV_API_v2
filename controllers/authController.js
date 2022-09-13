@@ -3,12 +3,13 @@ User = require("../models/userModel");
 var bcrypt = require("bcryptjs");
 const config = require("../config/auth.config");
 const emailController = require("../controllers/emailController");
+const registerController = require("../controllers/registerController");
 
 exports.auth = function (req, res) {
   const email = req.body.email,
     password = req.body.password;
 
-  User.findOne({ EmailAddress: email }).exec((err, user) => {
+  User.findOne({ EmailAddress: email }).exec(async (err, user) => {
     if (err) {
       return res.status(500).send({ message: err });
     }
@@ -23,6 +24,16 @@ exports.auth = function (req, res) {
       return res.status(401).send({
         accessToken: null,
         message: "Invalid Password!",
+      });
+    }
+
+    //If user hasn't confirmed email address, stop processing
+    let emailedConfirmed =
+      await registerController.checkUserEmailAddressConfirmed(user._id);
+
+    if (emailedConfirmed == null || !emailedConfirmed.emailConfirmed) {
+      return res.status(200).send({
+        message: "Unconfirmed",
       });
     }
 

@@ -27,4 +27,8 @@ module.exports = function (app) {
     "/api/user-confirming-email-address",
     registerController.setEmailAddressConfirmed
   );
+  app.post(
+    "/api/resend-email-confirmation-link",
+    registerController.resendEmailConfirmationLink
+  );
 };

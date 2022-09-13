@@ -68,6 +68,43 @@ setEmailAddressUnconfirmed = (user) => {
   });
 };
 
+exports.resendEmailConfirmationLink = (req, res) => {
+  //Find users ID
+  User.findOne({ EmailAddress: req.body.email }).exec(async (err, user) => {
+    if (err) {
+      return res.status(500).send({ message: err });
+    }
+
+    if (!user) {
+      return res.status(404).send({ message: "User Not Found." });
+    }
+
+    UserEmailConfirmation.findOne({ userID: user._id }).exec(
+      async (err, result) => {
+        if (err) {
+          return res.status(500).send({ message: err });
+        } else {
+          if (result == undefined || result == null) {
+            let newConf = await setEmailAddressUnconfirmed(user);
+            await EmailController.sendEmailAddressConfirmationEmail(
+              newConf._id,
+              req.body.email
+            );
+          } else {
+            await EmailController.sendEmailAddressConfirmationEmail(
+              result._id,
+              req.body.email
+            );
+          }
+          res.status(200).send({ message: "Confirmation Email Sent" });
+        }
+      }
+    );
+  });
+
+  //Use UserEmailConfirmationIDinNewEmail
+};
+
 exports.setEmailAddressConfirmed = (req, res) => {
   let emailConfID = "";
   jwt.verify(req.body.token, config.secret, (err, decoded) => {
@@ -88,6 +125,17 @@ exports.setEmailAddressConfirmed = (req, res) => {
       console.log(result);
       res.status(200).send({ message: "OK" });
     }
+  });
+};
+
+exports.checkUserEmailAddressConfirmed = (userID) => {
+  return new Promise((resolve, reject) => {
+    UserEmailConfirmation.findOne({ userID: userID }).exec((err, conf) => {
+      if (err) reject(err);
+      else {
+        resolve(conf);
+      }
+    });
   });
 };
 
