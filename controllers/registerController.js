@@ -7,6 +7,8 @@ const UserEmailConfirmation = require("../models/emailAddressConfirmationModel")
 const EmailController = require("./emailController");
 const config = require("../config/auth.config");
 let jwt = require("jsonwebtoken");
+const Town = require("../models/town-cityModel");
+const County = require("../models/countyModel");
 
 exports.checkDuplicateUsername = (req, res, next) => {
   UserCredential.findOne({
@@ -101,8 +103,6 @@ exports.resendEmailConfirmationLink = (req, res) => {
       }
     );
   });
-
-  //Use UserEmailConfirmationIDinNewEmail
 };
 
 exports.setEmailAddressConfirmed = (req, res) => {
@@ -165,4 +165,28 @@ setAccountType = (user) => {
       });
     }
   });
+};
+
+exports.getTownsCities = (req, res) => {
+  Town.find({ Supported: true })
+    .sort({ Town: 1 })
+    .exec((err, results) => {
+      if (err) {
+        res.status(500).send({ message: "Unable to fetch towns" });
+      } else {
+        res.status(200).send({ data: results });
+      }
+    });
+};
+
+exports.getCounties = (req, res) => {
+  County.find({ Supported: true })
+    .sort({ County: 1 })
+    .exec((err, results) => {
+      if (err) {
+        res.status(500).send({ message: "Unable to fetch counties" });
+      } else {
+        res.status(200).send({ data: results });
+      }
+    });
 };

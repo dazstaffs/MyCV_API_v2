@@ -13,6 +13,8 @@ module.exports = function (app) {
   });
 
   app.get("/api/languages", langController.index);
+  app.get("/api/towns-cities", registerController.getTownsCities);
+  app.get("/api/counties", registerController.getCounties);
   app.post(
     "/api/register",
     [registerController.checkDuplicateUsername],
