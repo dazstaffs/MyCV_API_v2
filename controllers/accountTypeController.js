@@ -82,36 +82,48 @@ exports.updateUserAccountType = function (req, res) {
   );
 };
 
-exports.getUserAccountType = function (req, res) {
+exports.getUserAccountType = async function (req, res) {
   let userId = authService.getUserID(req);
-  UserAccountType.findOne({ userID: userId }).exec((err, userAccType) => {
-    if (err) {
-      console.log(err);
+  await exports
+    .getUserAccountType2(userId)
+    .then((resp) => {
+      res.json({
+        status: "success",
+        message: "user account retrieved",
+        data: resp,
+      });
+    })
+    .catch((err) => {
       res.json({
         status: "error",
         message: err,
       });
-    } else {
-      AccountType.findOne({ _id: userAccType.accountType }, (err2, accType) => {
-        if (err2) {
-          console.log(err);
-          res.json({
-            status: "error",
-            message: err,
-          });
-        } else {
-          res.json({
-            status: "success",
-            message: "user account retrieved",
-            data: {
-              accountTypeName: accType.accountTypeName,
-              renewalDate: userAccType.renewalDate,
-              renew: userAccType.renew,
-            },
-          });
-        }
-      });
-    }
+    });
+};
+
+exports.getUserAccountType2 = async function (userId) {
+  return new Promise((resolve, reject) => {
+    UserAccountType.findOne({ userID: userId }).exec((err, userAccType) => {
+      if (err) {
+        reject(err);
+      } else {
+        AccountType.findOne(
+          { _id: userAccType.accountType },
+          (err2, accType) => {
+            if (err2) {
+              reject(err2);
+            } else {
+              let data = {
+                accountTypeName: accType.accountTypeName,
+                renewalDate: userAccType.renewalDate,
+                renew: userAccType.renew,
+              };
+              resolve(data);
+            }
+          }
+        );
+      }
+    });
   });
 };
 

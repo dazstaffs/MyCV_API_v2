@@ -2,6 +2,7 @@ CV = require("../models/cvModel");
 authService = require("../controllers/authController");
 const e = require("cors");
 const mongoose = require("mongoose");
+userTypeController = require("../controllers/accountTypeController");
 
 exports.addCV = (req, res) => {
   let cv = new CV();
@@ -63,8 +64,10 @@ exports.updateCV = (req, res) => {
   });
 };
 
-exports.getUserCVs = (req, res) => {
+exports.getUserCVs = async (req, res) => {
   let userId = authService.getUserID(req);
+  let accType = await userTypeController.getUserAccountType2(userId);
+
   CV.find({ UserId: userId }).exec((err, cvs) => {
     if (err) {
       res.json({
@@ -72,11 +75,19 @@ exports.getUserCVs = (req, res) => {
         message: err,
       });
     }
-    res.json({
-      status: "success",
-      message: "CVs retrieved",
-      data: cvs,
-    });
+    if (accType.accountTypeName == "Premium") {
+      res.json({
+        status: "success",
+        message: "CVs retrieved",
+        data: cvs,
+      });
+    } else {
+      res.json({
+        status: "success",
+        message: "CVs retrieved",
+        data: cvs.slice(0, 1),
+      });
+    }
   });
 };
 
