@@ -61,5 +61,6 @@
   "name": "layout-8",
   "premium": false,
   "html": "<section style=\"display: flex;\" class=\"cvTemplate\"><div style=\"flex-grow: 1;\"></div></section>",
-  "enabled": true
+  "enabled": true,
+  "default": true
 }]
