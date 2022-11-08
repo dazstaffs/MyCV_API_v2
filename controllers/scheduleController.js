@@ -99,17 +99,17 @@ exports.scheduledTask = () => {
 
   //Create Jobs
   const downgradeNonRenewersJob = new SimpleIntervalJob(
-    { hours: 2 }, //set to 2 hours in case the first job fails.
+    { minutes: 15 }, //set to 2 hours in case the first job fails.
     downgradeNonRenewersTask
   );
 
   const deleteUserAccountsJob = new SimpleIntervalJob(
-    { hours: 2 }, //set to 2 hours in case the first job fails.
+    { minutes: 15 }, //set to 2 hours in case the first job fails.
     deleteUserAccountsTask
   );
 
   const processMonthlyRenewalsJob = new SimpleIntervalJob(
-    { hours: 2 }, //set to 2 hours in case the first job fails.
+    { minutes: 15 }, //set to 2 hours in case the first job fails.
     processMonthlyRenewalsTask
   );
 
