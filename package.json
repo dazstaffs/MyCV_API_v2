@@ -20,6 +20,6 @@
     "toad-scheduler": "^1.6.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.22"
   }
 }
