@@ -72,7 +72,7 @@ setEmailAddressUnconfirmed = (user) => {
 
 exports.resendEmailConfirmationLink = (req, res) => {
   //Find users ID
-  User.findOne({ EmailAddress: req.body.email }).exec(async (err, user) => {
+  User.findOne({ EmailAddress: { $eq: req.body.email } }).exec(async (err, user) => {
     if (err) {
       return res.status(500).send({ message: err });
     }
