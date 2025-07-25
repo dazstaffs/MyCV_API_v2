@@ -81,7 +81,10 @@ exports.setPassword = async (req, res) => {
   });
 
   User.findById(userID, function (err, user) {
-    if (err) res.send(err);
+    if (err) {
+      console.error("Error finding user:", err);
+      return res.status(500).send({ message: "An error occurred while processing your request." });
+    }
     user.Password = newPassword;
     user.save(async function (err) {
       if (err) res.json(err);
