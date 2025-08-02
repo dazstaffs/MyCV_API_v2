@@ -12,7 +12,7 @@ const County = require("../models/countyModel");
 
 exports.checkDuplicateUsername = (req, res, next) => {
   UserCredential.findOne({
-    EmailAddress: req.body.emailAddress,
+    EmailAddress: { $eq: req.body.emailAddress },
   }).exec((err, userCredential) => {
     if (err) {
       res.status(500).send({ message: err });
